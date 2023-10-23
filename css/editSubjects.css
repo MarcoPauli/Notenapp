@@ -1,0 +1,76 @@
+:root {
+    --blue: rgb(51, 0, 153);
+}
+
+#addSubjectsDiv {
+    position: absolute;
+    top: 10%;
+    margin-left: 5px;
+}
+
+#addSubjectInput {
+    border: none;
+    font-size: large;
+    padding: 10px;
+}
+
+#addSubjectBtn {
+    margin-top: 10px;
+    border: none;
+    padding: 10px;
+    font-size: large;
+    cursor: pointer;
+    color: black;
+}
+
+#appSettingsBtn {
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    padding: 10px;
+    margin: 10px;
+    font-size: large;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid black;
+    color: black;
+}
+
+#appSettingsPopup {
+    display: none;
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    left: 10%;
+    bottom: 10%;
+    background-color: white;
+    z-index: 4;
+    border: 2px solid var(--blue);
+}
+
+#editSubjectsPopup {
+    position: fixed;
+    right: 10%;
+    left: 10%;
+    top: 10%;
+    bottom: 10%;
+    border: 2px solid rgb(51, 0, 153);
+    z-index: 3;
+    background-color: white;
+    display: none;
+}
+/*Please note: the "deleteBtn" class, the "InsidePopupsDivs" class, the "confirmToAdd", the "popupFinished" class are responded at "editGradesPopup.css"*/
+
+#newSubjectName {
+    font-size: large;
+    padding: 5px;
+}
+
+#confirmAppInfoAction {
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}

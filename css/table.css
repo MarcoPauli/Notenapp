@@ -1,0 +1,23 @@
+/*TABLE*/
+
+:root {
+    --blue: rgb(51, 0, 153);
+}
+
+#showGradesTable {
+    border: 2px solid var(--blue);
+    width: 50%;
+    position: absolute;
+    top: 40%; 
+    z-index: 2;
+    background-color: var(--blue);
+}
+th, td {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid var(--blue);
+}
+
+.subject {
+    text-decoration: underline;
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+  <!--BEGIN OF HEAD-->
+  <head>
+    <!--GENERAL INFORMATION-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="rgb(204,238,247)">
+    <meta name="keywords" content="Grade calculator, school">
+    <meta name="description" content="Grade calculator, school">
+    <title>Notenapp</title>
+    <!--JAVASCRIPTS USED IN THIS APP-->
+    <script defer src="js/variables.js"></script>
+    <script src="js/changeMode.js" defer></script>
+    <script src="js/popups.js" defer></script>
+    <script src="js/main.js" defer=""></script>
+    <script src="js/addSubject.js" defer  type="module"></script>
+    <script src="js/editGrades.js" defer></script>
+    <script src="js/notification.js" defer type="module"></script>
+    <script src="js/checkId.js" ddefer type="module"></script>
+    <!--<script defer="" type="module" href="js/theme.js"></script>
+    <script type="module" defer="" src="js/background.process.js"></script>
+    <script defer="" src="js/editSubject.js"></script>
+    <script type="module" defer="" src="js/info.js"></script>
+    <script defer="" src="js/editSubjectPopup.js"></script>
+    <script src="js/appInfo.js" defer></script>-->
+    <!--CSS-FILES USED IN THIS APP-->
+    <link rel="stylesheet" href="css/editSubjects.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/editGradesPopup.css">
+    <!--MANIFEST-FILE USED IN THIS APP-->
+    <link rel="manifest" href="manifest.json">
+    <!--ICONS USED IN THIS APP-->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icons/apple-icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/icons/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  </head>
+  <!--END OF HEAD-->
+  <!--BEGIN OF BODY-->
+  <body>
+    <!--BEGIN OF NAVIGATIONELEMENTS-->
+    <nav>
+      <img id="logo" src="img/favicon.ico" alt="Logo LM">
+    </nav>
+    <!--END OF NAVIGATIONELEMENTS-->
+    <!--BEGIN OF MAIN-->
+    <main>
+      <!--BEGIN OF THE ELEMENTS THE USER CAN SEE BY DEFAULT-->
+      <div id="standardVisible">
+        <!--THIS DIV SHOWS THE USER THE MODE HE HAS SELECTED-->
+        <div id="showEditModeTxt">Ansichtmodus</div>
+        <!--THIS DIV INCLUDES ALL STANDARDINFORMATION SUCH AS THE MAINHEADING OF THE APPLICATION AS WELL AS THE AVERAGE AND THE STATISTICS-BUTTON-->
+        <div id="standardInformation">
+          <h1 id="mainHeading">Noten:</h1>
+          <div id="averageAllSubjectsDiv" title="Øges">
+            <font id="averageAllSubjects">Ø</font>
+          </div>
+          <button id="statistics">Statistiken</button>
+        </div>
+        <!--THIS BUTTON LETS THE USER SWITCH BETWEEN "ANSICHTMODUS" AND "BEARBEITUNGSGMODUS"-->
+        <button id="editGradesBtn" title="Noten bearbeiten">🖊</button>
+        <!--THIS TABLE SHOWS THE GRADES AND AVERAGES OF EACH SINGLE SUBJECT-->
+        <table id="showGradesTable">
+          <tbody>
+            <tr>
+              <th>Fach</th>
+              <th>KLN</th>
+              <th>GLN</th>
+              <th>Ø<sub>ges</sub></th>
+            </tr>
+            <!--<tr id="Biologie">
+              <td class="subject" id="subBio">Biologie</td>
+              <td id="KLNBiologie" class="KLNs">-</td>
+              <td id="GLNBio" class="GLNs">-</td>
+              <td id="ØgesBio">-</td>
+            </tr>
+            <tr id="Chemie">
+              <td class="subject" id="subChe">Chemie</td>
+              <td id="KLChe" class="KLNs">-</td>
+              <td id="GLNChe" class="GLNs">-</td>
+              <td id="ØgesChe">-</td>
+            </tr>
+            <tr id="Deutsch">
+              <td class="subject" id="subGer">Deutsch</td>
+              <td id="KLNGer" class="KLNs">-</td>
+              <td id="GLNGer" class="GLNs">-</td>
+              <td id="ØgesGer">-</td>
+            </tr>
+            <tr id="Englisch">
+              <td class="subject" id="subEng">Englisch</td>
+              <td id="KLNEng" class="KLNs">-</td>
+              <td id="GLNEng" class="GLNs">-</td>
+              <td id="ØgesEng">-</td>
+            </tr>
+            <tr id="Geografie">
+              <td class="subject" id="subGeo">Geografie</td>
+              <td id="KLNGeo" class="KLNs">-</td>
+              <td id="GLNGeo" class="GLNs">-</td>
+              <td id="ØgesGeo">-</td>
+            </tr>
+            <tr id="Geschichte">
+              <td class="subject" id="subHis">Geschichte</td>
+              <td id="KLNHis" class="KLNs">-</td>
+              <td id="GLNHis" class="GLNs">-</td>
+              <td id="ØgesHis">-</td>
+            </tr>
+            <tr id="Kunst">
+              <td class="subject" id="subArt">Kunst</td>
+              <td id="KLNArt" class="KLNs">-</td>
+              <td id="GLNArt" class="GLNs">-</td>
+              <td id="ØgesArt">-</td>
+            </tr>
+            <tr id="Latein">
+              <td class="subject" id="subLat">Latein</td>
+              <td id="KLNLat" class="KLNs">-</td>
+              <td id="GLNLat" class="GLNs">-</td>
+              <td id="ØgesLat">-</td>
+            </tr>
+            <tr id="Mathe">
+              <td class="subject" id="subMat">Mathe</td>
+              <td id="KLNMat" class="KLNs">-</td>
+              <td id="GLNMat" class="GLNs">-</td>
+              <td id="ØgesMat">-</td>
+            </tr>
+            <tr id="Musik">
+              <td class="subject" id="subMus">Musik</td>
+              <td id="KLNMus" class="KLNs">-</td>
+              <td id="GLNMus" class="GLNs">-</td>
+              <td id="ØgesMus">-</td>
+            </tr>
+            <tr id="Physik">
+              <td class="subject" id="subPhy">Physik</td>
+              <td id="KLNPhy" class="KLNs">-</td>
+              <td id="GLNPhy" class="GLNs">-</td>
+              <td id="ØgesPhy">-</td>
+            </tr>
+            <tr id="PuG">
+              <td class="subject" id="subPuG">PuG</td>
+              <td id="KLNPuG" class="KLNs">-</td>
+              <td id="GLNPuG" class="GLNs">-</td>
+              <td id="ØgesPuG">-</td>
+            </tr>
+            <tr id="Religion">
+              <td class="subject" id="subRel">Religion</td>
+              <td id="KLNRel" class="KLNs">-</td>
+              <td id="GLNRel" class="GLNs">-</td>
+              <td id="ØgesRel">-</td>
+            </tr>
+            <tr id="Spanisch">
+              <td class="subject" id="subSpa">Spanisch</td>
+              <td id="KLNSpa" class="KLNs">-</td>
+              <td id="GLNSpa" class="GLNs">-</td>
+              <td id="ØgesSpa">-</td>
+            </tr>
+            <tr id="Sport">
+              <td class="subject" id="subSpo">Sport</td>
+              <td id="KLNSpo" class="KLNs">-</td>
+              <td id="GLNSpo" class="GLNs">-</td>
+              <td id="ØgesSpo">-</td>
+            </tr>
+            <tr id="Wirtschaft">
+              <td class="subject" id="subEco">Wirtschaft</td>
+              <td id="KLNEco" class="KLNs">-</td>
+              <td id="GLNEco" class="GLNs">-</td>
+              <td id="ØgesEco">-</td>
+            </tr>-->
+          </tbody>
+        </table>
+        <!--END OF THE TABLE-->
+      </div>
+      <!--END OF THE ELEMENTS THE USER CAN SEE BY DEFAULT-->
+      <!--BEGIN OF THE SO CALLED "EDIT-MODE-DIV" WHICH INCLUDES "ADDSUBJECTSDIV"; "APPSETTINGSBTN" AND "APPINFORMATIONDIV"-->
+      <div id="editModeDiv">
+        <!--BEGIN OF ADDSUBJECTSDIV-->
+        <div id="addSubjectsDiv">
+          <h3>Fach hinzufügen➕</h3>
+          <input type="text" id="addSubjectInput" placeholder="Name des Fachs"><br>
+          <button id="addSubjectBtn">Hinzufügen</button>
+          <p id="addSubjectsDivInfo"><br></p>
+        </div>
+        <!--THIS BUTTON ALLOWS THE USER TO OPEN THE APP-SETTINGS-POPUP-->
+        <button id="appSettingsBtn">Einstellungen⚙️</button>
+      </div>
+      <!--END OF "EDIT-MODE-DIV"-->
+      <!--BEGIN OF "INFORMATIONDIV"-->
+      <div id="informationDiv">
+        <font id="information"></font>
+      </div>
+      <!--END OF "INFORMATIONDIV"-->
+      <!--BEGIN OF OVERLAYDIV-->
+      <div id="overlayDiv"></div>
+      <!--END OF OVERLAYDIV-->
+      <!--BEGIN OF "APP-SETTINGS-POPUP"-->
+      <div id="appSettingsPopup">
+        <div id="copyAndPasteAppInfo" class="InsidePopupsDivs">
+        <h3>Appinformation kopieren/einfügen</h3>
+        <select id="appInfo">
+          <option id="standardAppInfo">--Bitte wählen--</option>
+          <option id="copyAppInfo">Kopieren</option>
+          <option id="pasteAppInfo">Einfügen</option>
+        </select><br><br>
+        <input type="text" id="pasteAppInfoTextValue" placeholder="Appinfo einfügen" readonly><br><br>
+        <button id="confirmAppInfoAction">Los!</button>
+        </div>
+        <div id="backoutApplication" class="InsidePopupsDivs">
+          <h3>App zurücksetzen</h3>
+          <p class="explainToUser">Die App zurücksetzen?</p>
+          <input type="radio" name="backoutApplicationi" id="backoutApplicationInput">
+          <label for="backoutApplicationInput">Ja</label>
+          <input type="radio" name="backoutApplicationi" id="backoutApplicationInputNot" checked="">
+          <label for="backoutApplicationInputNot">Nein</label><br><br>
+          <button id="confirmToBackoutApplication" class="deleteBtn">Zurücksetzen</button>
+        </div>
+        <button id="AppSettingsFinishedBtn" class="popupFinished">Fertig</button>
+      </div>
+      <!--END OF "APP-SETTINGS-POPUP"-->
+      <!--BEGIN OF "EDIT-SUBJECTS-POPUP"-->
+      <div id="editSubjectsPopup">
+        <div id="renameSubjectDiv" class="InsidePopupsDivs">
+          <h3 id="renameSubjectDivHeading">Fach umbenennen</h3>
+          <input type="text" id="newSubjectName" placeholder="Neuer Name"><br><br>
+          <button id="confirmRenaming" class="confirmToAdd">Umbenennen</button>
+        </div>
+        <div id="deleteSubjectDiv" class="InsidePopupsDivs">
+          <h3 id="deleteSubjectDivHeading">Fach löschen</h3>
+          <p id="explainSubjectDeletiionToUser">Dieses Fach löschen?</p>
+          <input type="radio" name="delteSubject" id="deleteThisSubject">
+          <label for="deleteThisSubject">Ja</label>
+          <input type="radio" name="delteSubject" id="deleteThisSubjectNot" checked="">
+          <label for="deleteThisSubjectNot">Nein</label><br><br>
+          <button id="confirmToDeleteThisSubject" class="deleteBtn">Löschen</button>
+          <button id="editSubjectFinished" class="popupFinished">Fertig</button>
+        </div>
+      </div>
+      <!--END OF "EDIT-SUBJECTS-POPUP"-->
+      <!--BEGIN OF "EDIT-GRADES-POPUP"-->
+      <div id="editGradesPopup">
+        <div id="addGradeDiv" class="InsidePopupsDivs">
+          <h3 id="addGradeDivHeading">Note hinzufügen</h3>
+          <select id="addGradeSelect">
+            <option id="selectGradePlaceholder">Note wählen</option>
+            <option id="selectGrade1">1</option>
+            <option id="selectGrade2">2</option>
+            <option id="selectGrade3">3</option>
+            <option id="selectGrade4">4</option>
+            <option id="selectGrade5">5</option>
+            <option id="selectGrade6">6</option>
+          </select><br><br>
+          <button id="addGradeDivBtn" class="confirmToAdd">Hinzufügen</button>
+        </div>
+        <div id="removeGradeDiv" class="InsidePopupsDivs">
+          <h3 id="removeGradePopup">Note entfernen</h3>
+          <p class="explainToUser">Die Noten dieser Zelle löschen?</p>
+          <input type="radio" name="delteCells" id="deleteThisCellRadio">
+          <label for="deleteThisCellRadio">Ja</label>
+          <input type="radio" name="delteCells" id="deleteThisCellRadioNot" checked="">
+          <label for="deleteThisCellRadioNot">Nein</label><br><br>
+          <button id="confirmToDeleteThisCell" class="deleteBtn">Löschen</button>
+        </div>
+        <button id="finished" class="popupFinished">Fertig</button>
+      </div>
+      <!--END OF "EDIT-GRADES-POPUP"-->
+    </main>
+    <!--END OF MAIN-->
+  </body>
+  <!--END OF BODY-->
+</html>

@@ -1,0 +1,73 @@
+:root {
+    --blue: rgb(51, 0, 153);
+}
+
+option {
+    margin: 10px;
+}
+
+#addGradeBtn {
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#addGradeBtn:hover {
+    background-color: var(--blue);
+}
+
+#editGradesPopup {
+    position: fixed;
+    right: 10%;
+    left: 10%;
+    top: 10%;
+    bottom: 10%;
+    border: 2px solid rgb(51, 0, 153);
+    z-index: 3;
+    background-color: white;
+    display: none;
+}
+
+.InsidePopupsDivs {
+    margin-left: 10px;
+}
+
+.popupFinished {
+    position: absolute;
+    bottom: 10%;
+    width: 20%;
+    left: 40%;
+    right: 40%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+}
+
+.popupFinished:hover {
+    background-color: var(--blue);
+}
+
+.deleteBtn {
+    border: none;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.confirmToAdd {
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#addGradeSelect {
+    padding: 5px;
+}
