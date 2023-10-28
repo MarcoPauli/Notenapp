@@ -22,6 +22,7 @@ function changeMode (currentFunction, stStyle, editModeStyle, btnTxt, btnTitle, 
     let glnClass = document.getElementsByClassName("GLNs");
     let subjectClass = document.getElementsByClassName("subject");
     for (let i = 0; i < klnClass.length; i++) {
+        console.log("fori")
         currentFunction(klnClass, i, "showEditGradesPopup(this)");
         currentFunction(subjectClass, i, "showEditSubjectsPopup(this)");
         currentFunction(glnClass, i, "showEditGradesPopup(this)");

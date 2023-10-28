@@ -14,11 +14,13 @@
     <script defer src="js/variables.js"></script>
     <script src="js/changeMode.js" defer></script>
     <script src="js/popups.js" defer></script>
-    <script src="js/main.js" defer=""></script>
+    <script src="js/main.js" defer type="module"></script>
     <script src="js/addSubject.js" defer  type="module"></script>
     <script src="js/editGrades.js" defer></script>
     <script src="js/notification.js" defer type="module"></script>
     <script src="js/checkId.js" ddefer type="module"></script>
+    <script src="js/editSubjects.js" defer type="module"></script>
+    <script src="js/loadStandardSet.js" defer type="module"></script>
     <!--<script defer="" type="module" href="js/theme.js"></script>
     <script type="module" defer="" src="js/background.process.js"></script>
     <script defer="" src="js/editSubject.js"></script>
@@ -195,8 +197,8 @@
               <td id="KLNEco" class="KLNs">-</td>
               <td id="GLNEco" class="GLNs">-</td>
               <td id="ØgesEco">-</td>
-            </tr>-->
-          </tbody>
+            </tr>
+          </tbody>-->
         </table>
         <!--END OF THE TABLE-->
       </div>
@@ -224,6 +226,11 @@
       <!--END OF OVERLAYDIV-->
       <!--BEGIN OF "APP-SETTINGS-POPUP"-->
       <div id="appSettingsPopup">
+        <div id="loadStandardSet" class="InsidePopupsDivs">
+          <h3>Standardnotenpaket laden</h3>
+          <p class="explainToUser">Möchtest du das Standardnotenpacket laden?</p>
+          <button id="confirmLoadStandardSetBtn" class="deleteBtn">Laden!</button>
+        </div>
         <div id="copyAndPasteAppInfo" class="InsidePopupsDivs">
         <h3>Appinformation kopieren/einfügen</h3>
         <select id="appInfo">
@@ -237,10 +244,6 @@
         <div id="backoutApplication" class="InsidePopupsDivs">
           <h3>App zurücksetzen</h3>
           <p class="explainToUser">Die App zurücksetzen?</p>
-          <input type="radio" name="backoutApplicationi" id="backoutApplicationInput">
-          <label for="backoutApplicationInput">Ja</label>
-          <input type="radio" name="backoutApplicationi" id="backoutApplicationInputNot" checked="">
-          <label for="backoutApplicationInputNot">Nein</label><br><br>
           <button id="confirmToBackoutApplication" class="deleteBtn">Zurücksetzen</button>
         </div>
         <button id="AppSettingsFinishedBtn" class="popupFinished">Fertig</button>

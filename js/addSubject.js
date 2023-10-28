@@ -22,23 +22,9 @@ function addParticularSubject(name) {
     localStorage.setItem("subjects", JSON.stringify(subjects));
 }
 
-function CreateSubject(name, gewichtung) {
+export function CreateSubject(name, gewichtung) {
     this.Name = name;
     this.kln = [];
     this.gln = []
     this.gewichtung = gewichtung;
-}
-
-//Code for standardset
-
-if (storage == null) {
-    standardSet();
-}
-
-function standardSet () {
-    for (let x in standardSubjectsSet) {
-        let subName = standardSubjectsSet[x][0];
-        subjects[subName] = new CreateSubject(subName, standardSubjectsSet[x][1]);
-        localStorage.setItem("subjects", JSON.stringify(subjects));
-    }
 }

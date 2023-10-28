@@ -30,7 +30,7 @@ THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF EDITSUBJECTSPOPUP
 function showEditSubjectsPopup(THIS) {
     editSubjectsPopup.style.display = "block";
     overlayDiv.style.display = "block";
-    saveClickedCell(THIS.parentElement.id);
+    saveClickedCell(THIS);
 }
 
 editSubjectFinished.addEventListener("click", () => {
