@@ -1,12 +1,8 @@
-let repeatEverySecond = setInterval(() => {
-    calculateSingleAverages();
-}, 1000);
-
-function calculateSingleAverages() {
+export function calculateSingleAverages() {
     let tr = document.querySelectorAll("tr");
     let entireAverage = 0;
     let averageCounter = 0;
-    for (i = 1; i < tr.length; i++) {
+    for (let i = 1; i < tr.length; i++) {
         let kln = Number(calculateSingleAverage("kln", i)) ;//i!!!
         let gln = Number(calculateSingleAverage("gln", i));
         let weighting = Number(subjects[tr[i].id]["gewichtung"]);//i!!!
@@ -14,7 +10,7 @@ function calculateSingleAverages() {
         if (gln < 1 && kln < 1) {
             overallAverage = 0;
             tr[i].children[3].innerHTML = "-";
-            tr[i].children[3].style.backgroundColor = "white";
+            //tr[i].children[3].style.backgroundColor = "white";
             /*tr[i].children[3].fontWeight = "normal";
             tr[i].children[3].textAlign = "left";
             tr[i].children[3].color = "black";*/

@@ -1,4 +1,24 @@
 
+
+/*
+THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF STATISTICSPOPUP
+*/
+let statisticsPopup = document.getElementById("statisticsPopup");
+let statisticsBtn = document.getElementById("statisticsBtn");
+statisticsBtn.addEventListener("click", showStatisticsPopup);
+
+function showStatisticsPopup(THIS) {
+    overlayDiv.style.display = "block";
+    statisticsPopup.style.display = "block";
+    saveClickedCell(THIS);
+}
+
+let StatisticsPopupFinishedBtn = document.getElementById("StatisticsPopupFinishedBtn");
+StatisticsPopupFinishedBtn.addEventListener("click", () => {
+    statisticsPopup.style.display = "none";
+    overlayDiv.style.display = "none";
+});
+
 /*
 THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF EDITGRADESPOPUP
 */

@@ -1,5 +1,5 @@
-//import { showSingleHTMLElement } from "./loadStandardSet.js";
-
+import { calculateSingleAverages } from "./calculateAverages.js";
+import { userBackgroundColor } from "./theme.js";
 if (storage != null) {
     for (let x in subjects) {
         showSingleHTMLElement(subjects[x]["Name"], false);
@@ -53,3 +53,8 @@ function showSingleHTMLElement(name) {
     tr.appendChild(td4);
     table.appendChild(tr);
 }
+
+let repeatEverySecond = setInterval(() => {
+    userBackgroundColor();
+    calculateSingleAverages();
+}, 1000);

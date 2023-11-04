@@ -22,6 +22,6 @@ let storage = localStorage.getItem("subjects");
 const subjects = (storage == null) ? {} : JSON.parse(storage);
 
 const standardSubjectsSet = [["Deutsch", 2], ["Englisch", 2], ["Geografie", 1], 
-["Geschichte", 1], ["Kunst", 1], ["Latein", 2], ["Mathe", 2], ["Musik", 2], 
-["Physik", 1], ["PuG", 2], ["Religion", 1], ["Spanisch", 2], ["Sport", 1], 
-["Wirtschaft", 1]];
+["Geschichte", 1], ["Informatik", 1], ["Kunst", 1], ["Latein", 2], ["Mathe", 2], 
+["Musik", 2], ["Physik", 1], ["PuG", 1], ["Religion", 1], ["Spanisch", 2], 
+["Sport", 1], ["Wirtschaft", 1]];

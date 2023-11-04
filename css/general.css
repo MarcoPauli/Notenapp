@@ -63,18 +63,19 @@ main {
     
 }
 
-#statistics {
+#statisticsBtn {
     color: var(--blue);
-    text-decoration: underline;
     cursor: pointer;
-    border: none;
-    background-color: inherit;
+    border: 2px solid var(--blue);
+    font-size: larger;
+    background-color: white;
+    padding: 10px;
     position: absolute;
     top: 30%;
     margin-left: 5px;
 }
 
-#statistics:hover {
+#statisticsBtn:hover {
     text-decoration: none;
 }
 

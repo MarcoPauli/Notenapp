@@ -1,0 +1,11 @@
+#statisticsPopup {
+    position: fixed;
+    right: 10%;
+    left: 10%;
+    top: 10%;
+    bottom: 10%;
+    border: 2px solid rgb(51, 0, 153);
+    z-index: 3;
+    background-color: white;
+    display: none;
+}

@@ -21,14 +21,16 @@
     <script src="js/checkId.js" ddefer type="module"></script>
     <script src="js/editSubjects.js" defer type="module"></script>
     <script src="js/loadStandardSet.js" defer type="module"></script>
-    <script src="js/calculateAverages.js" defer></script>
+    <script src="js/calculateAverages.js" defer type="module"></script>
     <script src="js/backoutApp.js" defer></script>
     <script src="js/appInfo.js" defer></script>
+    <script src="js/theme.js" defer type="module"></script>
     <!--CSS-FILES USED IN THIS APP-->
     <link rel="stylesheet" href="css/editSubjects.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/editGradesPopup.css">
+    <link rel="stylesheet" href="css/statistics.css">
     <!--MANIFEST-FILE USED IN THIS APP-->
     <link rel="manifest" href="manifest.json">
     <!--ICONS USED IN THIS APP-->
@@ -86,7 +88,7 @@
           <div id="averageAllSubjectsDiv" title="Øges">
             <font id="averageAllSubjects">Ø</font>
           </div>
-          <button id="statistics">Statistiken</button>
+          <button id="statisticsBtn">Statistiken</button>
         </div>
         <!--THIS BUTTON LETS THE USER SWITCH BETWEEN "ANSICHTMODUS" AND "BEARBEITUNGSGMODUS"-->
         <button id="editGradesBtn" title="Noten bearbeiten">🖊</button>
@@ -123,11 +125,17 @@
       <!--BEGIN OF OVERLAYDIV-->
       <div id="overlayDiv"></div>
       <!--END OF OVERLAYDIV-->
+      <!--BEGIN OF "STATISTICS-POPUP"-->
+      <div id="statisticsPopup">
+        MARBOD GRÜßT SEINE FREUNDE
+        <button id="StatisticsPopupFinishedBtn" class="popupFinished">Fertig</button>
+      </div>
+      <!--END OF STATISTICSPOUP-->
       <!--BEGIN OF "APP-SETTINGS-POPUP"-->
       <div id="appSettingsPopup">
         <div id="loadStandardSet" class="InsidePopupsDivs">
           <h3>Standardnotenpaket laden</h3>
-          <p class="explainToUser">Möchtest du das Standardnotenpacket laden?</p>
+          <p class="explainToUser">Möchtest du das Standardnotenpaket laden?</p>
           <button id="confirmLoadStandardSetBtn" class="deleteBtn">Laden!</button>
         </div>
         <div id="copyAndPasteAppInfo" class="InsidePopupsDivs">
