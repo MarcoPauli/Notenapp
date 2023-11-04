@@ -31,12 +31,21 @@ function showEditSubjectsPopup(THIS) {
     editSubjectsPopup.style.display = "block";
     overlayDiv.style.display = "block";
     saveClickedCell(THIS);
+    showWeighting();
 }
 
 editSubjectFinished.addEventListener("click", () => {
     editSubjectsPopup.style.display = "none";
     overlayDiv.style.display = "none";
 });
+
+function showWeighting() {
+    let currentWeightingHTML = document.getElementById("currentWeighting");
+    let currentWeighting = subjects[clickedCell.parentElement.id]["gewichtung"];
+    if (currentWeighting == 1) currentWeightingHTML.innerHTML = "Einfach";
+    else if (currentWeighting == 2) currentWeightingHTML.innerHTML = "Doppelt";
+}
+
 
 /*
 THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF APPSETTINGSPOPUP

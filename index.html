@@ -16,17 +16,14 @@
     <script src="js/popups.js" defer></script>
     <script src="js/main.js" defer type="module"></script>
     <script src="js/addSubject.js" defer  type="module"></script>
-    <script src="js/editGrades.js" defer></script>
+    <script src="js/editGrades.js" defer type="module"></script>
     <script src="js/notification.js" defer type="module"></script>
     <script src="js/checkId.js" ddefer type="module"></script>
     <script src="js/editSubjects.js" defer type="module"></script>
     <script src="js/loadStandardSet.js" defer type="module"></script>
-    <!--<script defer="" type="module" href="js/theme.js"></script>
-    <script type="module" defer="" src="js/background.process.js"></script>
-    <script defer="" src="js/editSubject.js"></script>
-    <script type="module" defer="" src="js/info.js"></script>
-    <script defer="" src="js/editSubjectPopup.js"></script>
-    <script src="js/appInfo.js" defer></script>-->
+    <script src="js/calculateAverages.js" defer></script>
+    <script src="js/backoutApp.js" defer></script>
+    <script src="js/appInfo.js" defer></script>
     <!--CSS-FILES USED IN THIS APP-->
     <link rel="stylesheet" href="css/editSubjects.css">
     <link rel="stylesheet" href="css/general.css">
@@ -95,110 +92,12 @@
         <button id="editGradesBtn" title="Noten bearbeiten">🖊</button>
         <!--THIS TABLE SHOWS THE GRADES AND AVERAGES OF EACH SINGLE SUBJECT-->
         <table id="showGradesTable">
-          <tbody>
-            <tr>
-              <th>Fach</th>
-              <th>KLN</th>
-              <th>GLN</th>
-              <th>Ø<sub>ges</sub></th>
-            </tr>
-            <!--<tr id="Biologie">
-              <td class="subject" id="subBio">Biologie</td>
-              <td id="KLNBiologie" class="KLNs">-</td>
-              <td id="GLNBio" class="GLNs">-</td>
-              <td id="ØgesBio">-</td>
-            </tr>
-            <tr id="Chemie">
-              <td class="subject" id="subChe">Chemie</td>
-              <td id="KLChe" class="KLNs">-</td>
-              <td id="GLNChe" class="GLNs">-</td>
-              <td id="ØgesChe">-</td>
-            </tr>
-            <tr id="Deutsch">
-              <td class="subject" id="subGer">Deutsch</td>
-              <td id="KLNGer" class="KLNs">-</td>
-              <td id="GLNGer" class="GLNs">-</td>
-              <td id="ØgesGer">-</td>
-            </tr>
-            <tr id="Englisch">
-              <td class="subject" id="subEng">Englisch</td>
-              <td id="KLNEng" class="KLNs">-</td>
-              <td id="GLNEng" class="GLNs">-</td>
-              <td id="ØgesEng">-</td>
-            </tr>
-            <tr id="Geografie">
-              <td class="subject" id="subGeo">Geografie</td>
-              <td id="KLNGeo" class="KLNs">-</td>
-              <td id="GLNGeo" class="GLNs">-</td>
-              <td id="ØgesGeo">-</td>
-            </tr>
-            <tr id="Geschichte">
-              <td class="subject" id="subHis">Geschichte</td>
-              <td id="KLNHis" class="KLNs">-</td>
-              <td id="GLNHis" class="GLNs">-</td>
-              <td id="ØgesHis">-</td>
-            </tr>
-            <tr id="Kunst">
-              <td class="subject" id="subArt">Kunst</td>
-              <td id="KLNArt" class="KLNs">-</td>
-              <td id="GLNArt" class="GLNs">-</td>
-              <td id="ØgesArt">-</td>
-            </tr>
-            <tr id="Latein">
-              <td class="subject" id="subLat">Latein</td>
-              <td id="KLNLat" class="KLNs">-</td>
-              <td id="GLNLat" class="GLNs">-</td>
-              <td id="ØgesLat">-</td>
-            </tr>
-            <tr id="Mathe">
-              <td class="subject" id="subMat">Mathe</td>
-              <td id="KLNMat" class="KLNs">-</td>
-              <td id="GLNMat" class="GLNs">-</td>
-              <td id="ØgesMat">-</td>
-            </tr>
-            <tr id="Musik">
-              <td class="subject" id="subMus">Musik</td>
-              <td id="KLNMus" class="KLNs">-</td>
-              <td id="GLNMus" class="GLNs">-</td>
-              <td id="ØgesMus">-</td>
-            </tr>
-            <tr id="Physik">
-              <td class="subject" id="subPhy">Physik</td>
-              <td id="KLNPhy" class="KLNs">-</td>
-              <td id="GLNPhy" class="GLNs">-</td>
-              <td id="ØgesPhy">-</td>
-            </tr>
-            <tr id="PuG">
-              <td class="subject" id="subPuG">PuG</td>
-              <td id="KLNPuG" class="KLNs">-</td>
-              <td id="GLNPuG" class="GLNs">-</td>
-              <td id="ØgesPuG">-</td>
-            </tr>
-            <tr id="Religion">
-              <td class="subject" id="subRel">Religion</td>
-              <td id="KLNRel" class="KLNs">-</td>
-              <td id="GLNRel" class="GLNs">-</td>
-              <td id="ØgesRel">-</td>
-            </tr>
-            <tr id="Spanisch">
-              <td class="subject" id="subSpa">Spanisch</td>
-              <td id="KLNSpa" class="KLNs">-</td>
-              <td id="GLNSpa" class="GLNs">-</td>
-              <td id="ØgesSpa">-</td>
-            </tr>
-            <tr id="Sport">
-              <td class="subject" id="subSpo">Sport</td>
-              <td id="KLNSpo" class="KLNs">-</td>
-              <td id="GLNSpo" class="GLNs">-</td>
-              <td id="ØgesSpo">-</td>
-            </tr>
-            <tr id="Wirtschaft">
-              <td class="subject" id="subEco">Wirtschaft</td>
-              <td id="KLNEco" class="KLNs">-</td>
-              <td id="GLNEco" class="GLNs">-</td>
-              <td id="ØgesEco">-</td>
-            </tr>
-          </tbody>-->
+          <tr>
+            <th>Fach</th>
+            <th>KLN</th>
+            <th>GLN</th>
+            <th>Ø<sub>ges</sub></th>
+          </tr>
         </table>
         <!--END OF THE TABLE-->
       </div>
@@ -232,14 +131,11 @@
           <button id="confirmLoadStandardSetBtn" class="deleteBtn">Laden!</button>
         </div>
         <div id="copyAndPasteAppInfo" class="InsidePopupsDivs">
-        <h3>Appinformation kopieren/einfügen</h3>
-        <select id="appInfo">
-          <option id="standardAppInfo">--Bitte wählen--</option>
-          <option id="copyAppInfo">Kopieren</option>
-          <option id="pasteAppInfo">Einfügen</option>
-        </select><br><br>
-        <input type="text" id="pasteAppInfoTextValue" placeholder="Appinfo einfügen" readonly><br><br>
-        <button id="confirmAppInfoAction">Los!</button>
+        <h3>Appdaten speichern/verwenden</h3>
+        <font id="saveDataFont">Daten speichern (als Datei): <button id="saveDataAsFile">Speichern</button></font>
+        <br><br>
+        <font id="usedSavedDataFont">Daten verwenden (einer Datei): <input type="file" id="selectFile"> <button id="selectFileBtn">Verwenden</button></font>
+        <br><br>
         </div>
         <div id="backoutApplication" class="InsidePopupsDivs">
           <h3>App zurücksetzen</h3>
@@ -259,12 +155,16 @@
         <div id="deleteSubjectDiv" class="InsidePopupsDivs">
           <h3 id="deleteSubjectDivHeading">Fach löschen</h3>
           <p id="explainSubjectDeletiionToUser">Dieses Fach löschen?</p>
-          <input type="radio" name="delteSubject" id="deleteThisSubject">
-          <label for="deleteThisSubject">Ja</label>
-          <input type="radio" name="delteSubject" id="deleteThisSubjectNot" checked="">
-          <label for="deleteThisSubjectNot">Nein</label><br><br>
           <button id="confirmToDeleteThisSubject" class="deleteBtn">Löschen</button>
           <button id="editSubjectFinished" class="popupFinished">Fertig</button>
+        </div>
+        <div id="SubjectWeightingDiv" class="InsidePopupsDivs">
+          <h3 id="SubjectWeightingDivHeading">Gewichtung (Akt.: <font style="text-decoration:underline;" id="currentWeighting">Doppelt</font>)</h3>
+          <input type="radio" name="SubjectWeighting" id="doubledWeighting">
+          <label for="doubledWeighting">Doppelt</label>
+          <input type="radio" name="SubjectWeighting" id="singleWeighting">
+          <label for="singleWeighting">Einfach</label><br><br>
+          <button id="confirmToChangeThisSubjectWeighting" class="confirmToAdd">Ändern</button>
         </div>
       </div>
       <!--END OF "EDIT-SUBJECTS-POPUP"-->
