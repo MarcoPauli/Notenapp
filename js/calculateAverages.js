@@ -5,7 +5,7 @@ export function calculateSingleAverages() {
     for (let i = 1; i < tr.length; i++) {
         let kln = Number(calculateSingleAverage("kln", i)) ;//i!!!
         let gln = Number(calculateSingleAverage("gln", i));
-        let weighting = Number(subjects[tr[i].id]["gewichtung"]);//i!!!
+        let weighting = Number(subjects[tr[i].id]["weighting"]);//i!!!
         let overallAverage = 0;
         if (gln < 1 && kln < 1) {
             overallAverage = 0;

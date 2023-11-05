@@ -24,9 +24,9 @@ function addParticularSubject(name) {
     localStorage.setItem("subjects", JSON.stringify(subjects));
 }
 
-export function CreateSubject(name, gewichtung) {
+export function CreateSubject(name, weighting) {
     this.Name = name;
     this.kln = [];
     this.gln = []
-    this.gewichtung = gewichtung;
+    this.weighting = weighting;
 }

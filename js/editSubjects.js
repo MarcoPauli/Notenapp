@@ -60,13 +60,13 @@ function checkToStartChangingTheWeighting() {
     let singleWeighting = document.getElementById("singleWeighting");
     let weightingHTML = document.getElementById("currentWeighting");
     if (doubleWeighting.checked) {
-        subjects[clickedCell.parentElement.id]["gewichtung"] = 2;
+        subjects[clickedCell.parentElement.id]["weighting"] = 2;
         localStorage.setItem("subjects", JSON.stringify(subjects));
         showInformation("Neue Gewichtung: doppelt" , "green");
         weightingHTML.innerHTML = "Doppelt";
     }
     if (singleWeighting.checked) {
-        subjects[clickedCell.parentElement.id]["gewichtung"] = 1;
+        subjects[clickedCell.parentElement.id]["weighting"] = 1;
         localStorage.setItem("subjects", JSON.stringify(subjects));
         showInformation("Neue Gewichtung: einfach" , "green");
         weightingHTML.innerHTML = "Einfach";

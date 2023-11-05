@@ -61,7 +61,7 @@ editSubjectFinished.addEventListener("click", () => {
 
 function showWeighting() {
     let currentWeightingHTML = document.getElementById("currentWeighting");
-    let currentWeighting = subjects[clickedCell.parentElement.id]["gewichtung"];
+    let currentWeighting = subjects[clickedCell.parentElement.id]["weighting"];
     if (currentWeighting == 1) currentWeightingHTML.innerHTML = "Einfach";
     else if (currentWeighting == 2) currentWeightingHTML.innerHTML = "Doppelt";
 }
