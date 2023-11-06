@@ -5,16 +5,18 @@ import { showSingleHTMLElement } from "./loadStandardSet.js";
 addSubjectBtn.addEventListener("click", startToAddSubject);
 
 function startToAddSubject() {
-    let userInput = document.getElementById("addSubjectInput").value.trim();
+    let userValue = document.getElementById("addSubjectInput");
+    let userInput = userValue.value.trim();
     isEqual = false;
     checkID(userInput);
     if((!isEqual) && (userInput != "") && (!userInput.includes(" "))) {
         addParticularSubject(userInput);
         showSingleHTMLElement(userInput, true);
-        showInformation(`Fach "${userInput}" erfolgreich hinzugefügt`, "green")
+        showInformation(`Fach "${userInput}" erfolgreich hinzugefügt`, "green");
     }
     if(isEqual) showInformation("Name bereits vergeben", "red")
     if((userInput == "") || (userInput.includes(" "))) showInformation("invalide Eingabe", "red")
+    userValue.value = "";
 }
 
 

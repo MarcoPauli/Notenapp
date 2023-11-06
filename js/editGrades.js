@@ -41,6 +41,7 @@ function checkSelectedGrade() {//Achtung: vereinfachen und bestehende array län
 
 function removeCell() {
     let deleteThisCellRadio = document.getElementById("deleteThisCellRadio");
+    let deleteThisCellRadioNot = document.getElementById("deleteThisCellRadioNot");
     if (deleteThisCellRadio.checked && (clickedCell.id == "KLN" + clickedCell.parentElement.id)) {
         subjects[clickedCell.parentElement.id].kln = [];
         localStorage.setItem("subjects", JSON.stringify(subjects));
@@ -52,4 +53,6 @@ function removeCell() {
         showInformation("Zelle erfolgreich gelöscht!", "green");
         clickedCell.innerHTML = "-";
     }
+    deleteThisCellRadio.checked = false;
+    deleteThisCellRadioNot.checked = true;
 }

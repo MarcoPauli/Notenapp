@@ -5,7 +5,8 @@ let confirmRenaming = document.getElementById("confirmRenaming");
 confirmRenaming.addEventListener("click", renameSubject);
 
 function renameSubject() {
-    let newSubjectName = document.getElementById("newSubjectName").value.trim();
+    let userValue = document.getElementById("newSubjectName");
+    let newSubjectName = userValue.value.trim();
     isEqual = false;
     checkID(newSubjectName);
     if((!isEqual) && (newSubjectName != "") && !newSubjectName.includes(" ")) {
@@ -13,7 +14,8 @@ function renameSubject() {
         showInformation(`Fach in "${newSubjectName}" erfolgreich umbenannt!`, "green")
     }
     if(isEqual) showInformation("Name bereits vergeben", "red")
-    if((newSubjectName == "") || (newSubjectName.includes(" "))) showInformation("invalide Eingabe", "red")
+    if((newSubjectName == "") || (newSubjectName.includes(" "))) showInformation("invalide Eingabe", "red");
+    userValue.value = "";
 }
 
 function renameParticularSubject(name) {
@@ -71,4 +73,6 @@ function checkToStartChangingTheWeighting() {
         showInformation("Neue Gewichtung: einfach" , "green");
         weightingHTML.innerHTML = "Einfach";
     }
+    doubleWeighting.checked = false;
+    singleWeighting.checked = false;
 }

@@ -72,9 +72,11 @@ option {
     padding: 5px;
 }
 
-#showSubFont {
-    position: relative;
-    top: 10%;
-    right: 10%;
+.showSubFont {
+    position: absolute;
+    top: 15px;
+    right: 20%;
+    color: rgb(58, 175, 58);
+    font-size: x-large;
 }
 

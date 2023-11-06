@@ -28,6 +28,7 @@ function showEditGradesPopup(THIS) {
     overlayDiv.style.display = "block";
     editGradesPopup.style.display = "block";
     saveClickedCell(THIS);
+    showSubjectName(1);
 }
 //End of function "showEditGradesPopup"
 
@@ -52,6 +53,7 @@ function showEditSubjectsPopup(THIS) {
     overlayDiv.style.display = "block";
     saveClickedCell(THIS);
     showWeighting();
+    showSubjectName(0);
 }
 
 editSubjectFinished.addEventListener("click", () => {
@@ -66,6 +68,10 @@ function showWeighting() {
     else if (currentWeighting == 2) currentWeightingHTML.innerHTML = "Doppelt";
 }
 
+function showSubjectName(n) {
+    let showSubFonts = document.getElementsByClassName("showSubFont");
+    showSubFonts[n].innerHTML = `Fach: ${clickedCell.parentElement.id}`;
+}
 
 /*
 THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF APPSETTINGSPOPUP
