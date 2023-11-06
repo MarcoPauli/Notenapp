@@ -19,6 +19,7 @@ function renameSubject() {
 }
 
 function renameParticularSubject(name) {
+    console.log(clickedCell.innerHTML)
     let newClickedCell = clickedCell;
     clickedCell = clickedCell.parentElement.id;
     subjects[name] = subjects[clickedCell];
@@ -58,6 +59,7 @@ let confirmToChangeThisSubjectWeighting = document.getElementById("confirmToChan
 confirmToChangeThisSubjectWeighting.addEventListener("click", checkToStartChangingTheWeighting);
 
 function checkToStartChangingTheWeighting() {
+    console.log(clickedCell.parentElement.id)
     let doubleWeighting = document.getElementById("doubledWeighting");
     let singleWeighting = document.getElementById("singleWeighting");
     let weightingHTML = document.getElementById("currentWeighting");

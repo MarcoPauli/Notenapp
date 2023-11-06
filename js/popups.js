@@ -28,7 +28,8 @@ function showEditGradesPopup(THIS) {
     overlayDiv.style.display = "block";
     editGradesPopup.style.display = "block";
     saveClickedCell(THIS);
-    showSubjectName(1);
+    let grade = (clickedCell.id.includes("KLN")) ? `(KLN)` : `(GLN)`;
+    showSubjectName(1, grade);
 }
 //End of function "showEditGradesPopup"
 
@@ -53,7 +54,7 @@ function showEditSubjectsPopup(THIS) {
     overlayDiv.style.display = "block";
     saveClickedCell(THIS);
     showWeighting();
-    showSubjectName(0);
+    showSubjectName(0, "");
 }
 
 editSubjectFinished.addEventListener("click", () => {
@@ -68,9 +69,9 @@ function showWeighting() {
     else if (currentWeighting == 2) currentWeightingHTML.innerHTML = "Doppelt";
 }
 
-function showSubjectName(n) {
+function showSubjectName(n, gkln) {
     let showSubFonts = document.getElementsByClassName("showSubFont");
-    showSubFonts[n].innerHTML = `Fach: ${clickedCell.parentElement.id}`;
+    showSubFonts[n].innerHTML = `Fach: ${clickedCell.parentElement.id} ${gkln}`;
 }
 
 /*
