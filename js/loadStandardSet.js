@@ -28,18 +28,11 @@ export function showSingleHTMLElement(name, newEl) {
     tr.id = name;
     td1.setAttribute("class", "subject");
     td1.innerHTML = name;
-    //td1.setAttribute("onclick", "showEditSubjectsPopup(this)");
-    //td1.style.cursor = "pointer";
-    //td1.id = "sub" + name;
     td2.id = "KLN" + name;
     td2.innerHTML = "-";
-    //td2.setAttribute("onclick", "showEditGradesPopup(this)");
-    //td2.style.cursor = "pointer";
     td2.setAttribute("class", "KLNs");
     td3.id = "GLN" + name;
     td3.innerHTML = "-";
-    //td3.setAttribute("onclick", "showEditGradesPopup(this)");
-    //td3.style.cursor = "pointer";
     td3.setAttribute("class", "GLNs");
     td4.id = "Øges" + name;
     td4.innerHTML = "-";
