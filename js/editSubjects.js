@@ -48,7 +48,7 @@ function checkToDeleteThisSubject() {
         deleteSubject(clickedCell2);
         document.getElementById(clickedCell2).remove();
         showInformation('Fach "' + clickedCell2 + '" erfolgreich gelöscht', 'green')
-    } else if (clickedCell == null) {
+    } else if (clickedCell2 == null) {
         showInformation("Fach wurde schon gelöscht", "red");
     }
     //clickedCell = clickedCell.children[0];
