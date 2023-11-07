@@ -23,7 +23,6 @@ function changeToXMode(color, backgroundColor, overlayDivBgColor, tbColor) {
     editGradesPopup.style.backgroundColor = tbColor;
     appSettingsPopup.style.backgroundColor = tbColor;
     editSubjectsPopup.style.backgroundColor = tbColor;
-    //statistics.style.backgroundColor = backgroundColor;(verwechselung)
     body.style.backgroundColor = backgroundColor;
     body.style.color = color;
     let averageAllSubjectsDiv = document.getElementById("averageAllSubjectsDiv");
@@ -31,11 +30,13 @@ function changeToXMode(color, backgroundColor, overlayDivBgColor, tbColor) {
     changeTableTheme(td, tbColor, color);
     changeTableTheme(th, tbColor, color);
 }
+//End of function "changeToXMode"
 
+//Start of function changeTableTheme
 function changeTableTheme(x, tbColor, color) {
     for (let i = 0; i < x.length; i++) {
         x[i].style.backgroundColor = tbColor;
         x[i].style.color = color;
     }
 }
-//End of function "changeToXMode"
+//End of function changeTableTheme
