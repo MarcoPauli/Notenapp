@@ -40,16 +40,16 @@ confirmToDeleteThisSubject.addEventListener("click", checkToDeleteThisSubject);
 
 function checkToDeleteThisSubject() {
     let askUserToDeleteSubject = confirm("Willst du das Fach wirklich löschen?");
-    clickedCell = clickedCell.parentElement.id;
-    if (askUserToDeleteSubject && (clickedCell != null)) {
-        deleteSubject(clickedCell);
-        document.getElementById(clickedCell).remove();
-        showInformation('Fach "' + clickedCell + '" erfolgreich gelöscht', 'green')
+    clickedCell2 = clickedCell.parentElement.id;
+    if (askUserToDeleteSubject && (clickedCell2 != null)) {
+        deleteSubject(clickedCell2);
+        document.getElementById(clickedCell2).remove();
+        showInformation('Fach "' + clickedCell2 + '" erfolgreich gelöscht', 'green')
     } else if (clickedCell == null) {
         showInformation("Fach wurde schon gelöscht", "red");
     }
-    clickedCell = clickedCell.children[0];
-    return clickedCell;
+    //clickedCell = clickedCell.children[0];
+    //return clickedCell;
 }
 
 function deleteSubject(subject) {
