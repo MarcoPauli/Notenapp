@@ -48,6 +48,8 @@ function checkToDeleteThisSubject() {
     } else if (clickedCell == null) {
         showInformation("Fach wurde schon gelöscht", "red");
     }
+    clickedCell = clickedCell.children[0];
+    return clickedCell;
 }
 
 function deleteSubject(subject) {
