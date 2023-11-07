@@ -19,6 +19,7 @@ function renameSubject() {
 }
 
 function renameParticularSubject(name) {
+    alert(clickedCell.parentElement.id)
     console.log(clickedCell.innerHTML)
     let newClickedCell = clickedCell;
     clickedCell = clickedCell.parentElement.id;
@@ -32,6 +33,7 @@ function renameParticularSubject(name) {
     newClickedCell.parentElement.children[2].id = "GLN" + name;
     newClickedCell.parentElement.children[3].id = "Øges" + name;
     clickedCell = document.getElementById(name).children[0];
+    alert(clickedCell.parentElement.id)
     return clickedCell;
 }
 
@@ -51,6 +53,7 @@ function checkToDeleteThisSubject() {
     }
     //clickedCell = clickedCell.children[0];
     //return clickedCell;
+    alert(clickedCell.parentElement.id)
 }
 
 function deleteSubject(subject) {
