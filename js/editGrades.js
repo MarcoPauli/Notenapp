@@ -15,6 +15,7 @@ function editGrades() {
 
 function checkSelectedGrade() {
     let selectedGrade = document.getElementById("addGradeSelect").value;
+    let selectGradePlaceholder = document.getElementById("selectGradePlaceholder");
     if (!(isNaN(Number(selectedGrade)))) {
         let subjectsPropertyName = clickedCell.parentElement.id;
         if (clickedCell.id == ("KLN" + subjectsPropertyName)) { 
@@ -36,7 +37,7 @@ function checkSelectedGrade() {
             }
             showInformation("Note erfolgreich hinzugefügt!", "green");
         }
-        selectedGrade = "";
+        selectGradePlaceholder.selected = true;
     }
 }
 
