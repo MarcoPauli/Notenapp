@@ -36,7 +36,7 @@ function checkSelectedGrade() {
             }
             showInformation("Note erfolgreich hinzugefügt!", "green");
         }
-        selectedGrade.value = "Note wählen";
+        selectedGrade = "Note wählen";
     }
 }
 
