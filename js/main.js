@@ -16,9 +16,6 @@ function showSingleHTMLElement(name) {
     tr.id = name;
     td1.setAttribute("class", "subject");
     td1.innerHTML = name;
-    //td1.setAttribute("onclick", "showEditSubjectsPopup(this)");
-    //td1.style.cursor = "pointer";
-    //td1.id = "sub" + name;
     td2.id = "KLN" + name;
     td2.innerHTML = "-";
     if (subjects[name]["kln"].length > 1) {
@@ -29,13 +26,9 @@ function showSingleHTMLElement(name) {
     } else if (subjects[name]["kln"].length == 1) {
         td2.innerHTML = subjects[name]["kln"][0];
     }
-    //td2.setAttribute("onclick", "showEditGradesPopup(this)");
-    //td2.style.cursor = "pointer";
     td2.setAttribute("class", "KLNs");
     td3.id = "GLN" + name;
     td3.innerHTML = "-";
-    //td3.setAttribute("onclick", "showEditGradesPopup(this)");
-    //td3.style.cursor = "pointer";
     td3.setAttribute("class", "GLNs");
     if (subjects[name]["gln"].length > 1) {
         td3.innerHTML = subjects[name]["gln"][0];
