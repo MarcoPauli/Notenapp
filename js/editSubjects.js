@@ -43,7 +43,7 @@ confirmToDeleteThisSubject.addEventListener("click", checkToDeleteThisSubject);
 function checkToDeleteThisSubject() {
     alert(clickedCell.parentElement.id)
     let askUserToDeleteSubject = confirm("Willst du das Fach wirklich löschen?");
-    clickedCell2 = clickedCell.parentElement.id;
+    let clickedCell2 = clickedCell.parentElement.id;
     if (askUserToDeleteSubject && (clickedCell2 != null)) {
         deleteSubject(clickedCell2);
         document.getElementById(clickedCell2).remove();
