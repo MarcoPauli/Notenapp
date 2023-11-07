@@ -33,6 +33,8 @@ function renameParticularSubject(name) {
     newClickedCell.parentElement.children[2].id = "GLN" + name;
     newClickedCell.parentElement.children[3].id = "Øges" + name;
     clickedCell = document.getElementById(name).children[0];
+    let showSubFonts = document.getElementsByClassName("showSubFont");
+    showSubFonts[0].innerHTML = `Fach: ${clickedCell.parentElement.id}`;
     alert(clickedCell.parentElement.id)
     return clickedCell;
 }
