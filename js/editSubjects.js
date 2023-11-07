@@ -19,8 +19,6 @@ function renameSubject() {
 }
 
 function renameParticularSubject(name) {
-    alert(clickedCell.parentElement.id)
-    console.log(clickedCell.innerHTML)
     let newClickedCell = clickedCell;
     clickedCell = clickedCell.parentElement.id;
     subjects[name] = subjects[clickedCell];
@@ -35,7 +33,6 @@ function renameParticularSubject(name) {
     clickedCell = document.getElementById(name).children[0];
     let showSubFonts = document.getElementsByClassName("showSubFont");
     showSubFonts[0].innerHTML = `Fach: ${clickedCell.parentElement.id}`;
-    alert(clickedCell.parentElement.id)
     return clickedCell;
 }
 
@@ -43,7 +40,6 @@ let confirmToDeleteThisSubject = document.getElementById("confirmToDeleteThisSub
 confirmToDeleteThisSubject.addEventListener("click", checkToDeleteThisSubject);
 
 function checkToDeleteThisSubject() {
-    alert(clickedCell.parentElement.id)
     let askUserToDeleteSubject = confirm("Willst du das Fach wirklich löschen?");
     let clickedCell2 = clickedCell.parentElement.id;
     if (askUserToDeleteSubject && (clickedCell2 != null)) {
@@ -53,9 +49,6 @@ function checkToDeleteThisSubject() {
     } else if (clickedCell2 == null) {
         showInformation("Fach wurde schon gelöscht", "red");
     }
-    //clickedCell = clickedCell.children[0];
-    //return clickedCell;
-    alert(clickedCell.parentElement.id)
 }
 
 function deleteSubject(subject) {
@@ -67,7 +60,6 @@ let confirmToChangeThisSubjectWeighting = document.getElementById("confirmToChan
 confirmToChangeThisSubjectWeighting.addEventListener("click", checkToStartChangingTheWeighting);
 
 function checkToStartChangingTheWeighting() {
-    console.log(clickedCell.parentElement.id)
     let doubleWeighting = document.getElementById("doubledWeighting");
     let singleWeighting = document.getElementById("singleWeighting");
     let weightingHTML = document.getElementById("currentWeighting");
