@@ -13,11 +13,11 @@ function editGrades() {
     checkSelectedGrade();
 }
 
-function checkSelectedGrade() {//Achtung: vereinfachen und bestehende array länge > 1 funktioniert nicht (ändern)
+function checkSelectedGrade() {
     let selectedGrade = document.getElementById("addGradeSelect").value;
     if (!(isNaN(Number(selectedGrade)))) {
         let subjectsPropertyName = clickedCell.parentElement.id;
-        if (clickedCell.id == ("KLN" + subjectsPropertyName)) { //Achtung: wird wegen dem aktuellen html nicht wahr werden
+        if (clickedCell.id == ("KLN" + subjectsPropertyName)) { 
             subjects[subjectsPropertyName]["kln"].push(Number(selectedGrade));
             localStorage.setItem("subjects", JSON.stringify(subjects));
             if (subjects[subjectsPropertyName]["kln"].length == 1) {
@@ -26,7 +26,7 @@ function checkSelectedGrade() {//Achtung: vereinfachen und bestehende array län
                 document.getElementById(clickedCell.id).innerHTML += "; " + selectedGrade;
             }
             showInformation("Note erfolgreich hinzugefügt!", "green");
-        } else if (clickedCell.id == ("GLN" + subjectsPropertyName)) { //Achtung: wird wegen dem aktuellen html nicht wahr werden
+        } else if (clickedCell.id == ("GLN" + subjectsPropertyName)) { 
             subjects[subjectsPropertyName]["gln"].push(Number(selectedGrade));
             localStorage.setItem("subjects", JSON.stringify(subjects));
             if (subjects[subjectsPropertyName]["gln"].length == 1) {
