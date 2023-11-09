@@ -36,7 +36,7 @@ option {
 }
 
 .popupFinished {
-    position: absolute;
+    position: fixed;
     bottom: 10%;
     width: 20%;
     left: 40%;
