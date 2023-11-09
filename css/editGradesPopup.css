@@ -36,7 +36,7 @@ option {
 }
 
 .popupFinished {
-    position: fixed;
+    position: sticky;
     bottom: 10%;
     width: 20%;
     left: 40%;
