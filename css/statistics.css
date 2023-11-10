@@ -14,3 +14,7 @@
 #StatisticsPopupFinishedBtn {
     position: sticky;
 }
+
+#statisticsDivHeading {
+    text-align: center;
+}
