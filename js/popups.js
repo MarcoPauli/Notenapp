@@ -1,4 +1,4 @@
-
+//import { findYArray } from "./statistics.js";
 
 /*
 THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF STATISTICSPOPUP
@@ -10,7 +10,6 @@ statisticsBtn.addEventListener("click", showStatisticsPopup);
 function showStatisticsPopup(THIS) {
     overlayDiv.style.display = "block";
     statisticsPopup.style.display = "block";
-    saveClickedCell(THIS);
 }
 
 let StatisticsPopupFinishedBtn = document.getElementById("StatisticsPopupFinishedBtn");

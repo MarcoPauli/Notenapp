@@ -1,4 +1,4 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
   <!--BEGIN OF HEAD-->
   <head>
@@ -25,6 +25,9 @@
     <script src="js/backoutApp.js" defer></script>
     <script src="js/appInfo.js" defer></script>
     <script src="js/theme.js" defer type="module"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="js/statistics.js" defer></script>
+    
     <!--CSS-FILES USED IN THIS APP-->
     <link rel="stylesheet" href="css/editSubjects.css">
     <link rel="stylesheet" href="css/general.css">
@@ -130,9 +133,10 @@
         <h3 id="statisticsPopupHeading">Statistiken</h3>
         <div id="singleGrades">
           <h3 id="singleGrades">Anzahl einzelne Noten</h3>
+          <div id="myPlot"></div>
         </div>
         
-        <button id="StatisticsPopupFinishedBtn" class="popupFinished">Fertig</button>
+        <button id="StatisticsPopupFinishedBtn">x</button>
       </div>
       <!--END OF STATISTICSPOUP-->
       <!--BEGIN OF "APP-SETTINGS-POPUP"-->

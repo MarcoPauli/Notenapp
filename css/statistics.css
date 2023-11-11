@@ -1,21 +1,36 @@
 #statisticsPopup {
     position: fixed;
-    right: 10%;
-    left: 10%;
-    top: 10%;
-    bottom: 10%;
+    right: 5%;
+    left: 5%;
+    top: 5%;
+    bottom: 5%;
     border: 2px solid rgb(51, 0, 153);
     z-index: 3;
     background-color: white;
     display: none;
-    overflow: scroll;
+    
 }
 
 #StatisticsPopupFinishedBtn {
-    position: sticky;
-    bottom: 10%;
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    background-color: inherit;
+    border-left: none;
+    border-bottom: none;
+    border-top: 2px solid rgb(51, 0, 153);
+    border-right: 2px solid rgb(51, 0, 153);
+    font-size: xx-large;
+    color: red;
+    cursor: pointer;
 }
 
 #statisticsPopupHeading {
     text-align: center;
+}
+
+#myPlot {
+    position: relative;
+    width:100%;
+    max-width:700px;
 }
