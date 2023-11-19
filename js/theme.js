@@ -15,7 +15,7 @@ function changeToXMode(color, backgroundColor, overlayDivBgColor, tbColor) {
     let body = document.querySelector("body");
     let td = document.querySelectorAll("td");
     let th = document.querySelectorAll("th");
-    let statistics = document.getElementById("statistics");
+    let statistics = document.getElementById("statisticsPopup");
     let editGradesPopup = document.getElementById("editGradesPopup");
     let appSettingsPopup = document.getElementById("appSettingsPopup");
     let editSubjectsPopup = document.getElementById("editSubjectsPopup");
@@ -27,6 +27,7 @@ function changeToXMode(color, backgroundColor, overlayDivBgColor, tbColor) {
     body.style.color = color;
     let averageAllSubjectsDiv = document.getElementById("averageAllSubjectsDiv");
     averageAllSubjectsDiv.style.color = "white";
+    statistics.style.backgroundColor = tbColor;
     changeTableTheme(td, tbColor, color);
     changeTableTheme(th, tbColor, color);
 }

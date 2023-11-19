@@ -31,7 +31,6 @@ function findYArray() {
   let grade_5 = 0;
   let grade_6 = 0;
   for (let x in subjects) {
-    console.log(grade_1)
     for (let i = 0; i < subjects[x]["kln"].length; i++)  {
        switch(subjects[x]["kln"][i]) {
         case 1: 
