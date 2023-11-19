@@ -12,22 +12,24 @@
     <title>Notenapp</title>
     <!--JAVASCRIPTS USED IN THIS APP-->
     <script defer src="js/variables.js"></script>
-    <script src="js/changeMode.js" defer></script>
-    <script src="js/popups.js" defer></script>
+    <script src="js/changeMode.js" defer type="module"></script>
+    <!--<script type="module">
+      import { showEditGradesPopup, showEditSubjectsPopup} from "./popups.js";
+    </script>-->
+    <script src="js/popups.js" defer type="module"></script>
     <script src="js/main.js" defer type="module"></script>
     <script src="js/addSubject.js" defer  type="module"></script>
     <script src="js/editGrades.js" defer type="module"></script>
     <script src="js/notification.js" defer type="module"></script>
-    <script src="js/checkId.js" ddefer type="module"></script>
+    <script src="js/checkId.js" defer type="module"></script>
     <script src="js/editSubjects.js" defer type="module"></script>
     <script src="js/loadStandardSet.js" defer type="module"></script>
     <script src="js/calculateAverages.js" defer type="module"></script>
     <script src="js/backoutApp.js" defer></script>
     <script src="js/appInfo.js" defer></script>
     <script src="js/theme.js" defer type="module"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="js/statistics.js" defer></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="js/statistics.js" defer type="module"></script>
     <!--CSS-FILES USED IN THIS APP-->
     <link rel="stylesheet" href="css/editSubjects.css">
     <link rel="stylesheet" href="css/general.css">
@@ -133,7 +135,7 @@
         <h3 id="statisticsPopupHeading">Statistiken</h3>
         <div id="singleGrades">
           <h3 id="singleGrades">Anzahl einzelne Noten</h3>
-          <div id="myPlot"></div>
+          <canvas id="myPlot" style="width:100%;max-width:600px"></canvas>
         </div>
         
         <button id="StatisticsPopupFinishedBtn">x</button>

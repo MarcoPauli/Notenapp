@@ -1,4 +1,4 @@
-//import { findYArray } from "./statistics.js";
+import { statistics  } from "./statistics.js";
 
 /*
 THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF STATISTICSPOPUP
@@ -10,6 +10,7 @@ statisticsBtn.addEventListener("click", showStatisticsPopup);
 function showStatisticsPopup(THIS) {
     overlayDiv.style.display = "block";
     statisticsPopup.style.display = "block";
+    statistics();
 }
 
 let StatisticsPopupFinishedBtn = document.getElementById("StatisticsPopupFinishedBtn");
@@ -23,7 +24,7 @@ THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF EDITGRADESPOPUP
 */
 
 //This function shows the so called "EditGradesPopup"
-function showEditGradesPopup(THIS) {
+export function showEditGradesPopup(THIS) {
     overlayDiv.style.display = "block";
     editGradesPopup.style.display = "block";
     saveClickedCell(THIS);
@@ -48,7 +49,7 @@ finished.addEventListener("click", () => {
 THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF EDITSUBJECTSPOPUP
 */
 
-function showEditSubjectsPopup(THIS) {
+export function showEditSubjectsPopup(THIS) {
     editSubjectsPopup.style.display = "block";
     overlayDiv.style.display = "block";
     saveClickedCell(THIS);

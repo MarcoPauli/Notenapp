@@ -1,4 +1,5 @@
 /*This file manages that the user can switch between normal-mode and edit-mode*/
+import { showEditGradesPopup, showEditSubjectsPopup  } from "./popups.js";
 editGradesBtn.addEventListener("click", editGradesBtnFunc);
 
 function editGradesBtnFunc () {
@@ -21,10 +22,13 @@ function changeMode (currentFunction, stStyle, editModeStyle, btnTxt, btnTitle, 
     let klnClass = document.getElementsByClassName("KLNs");
     let glnClass = document.getElementsByClassName("GLNs");
     let subjectClass = document.getElementsByClassName("subject");
+    let tr = document.querySelectorAll("tr");
     for (let i = 0; i < klnClass.length; i++) {
-        currentFunction(klnClass, i, "showEditGradesPopup(this)");
-        currentFunction(subjectClass, i, "showEditSubjectsPopup(this)");
-        currentFunction(glnClass, i, "showEditGradesPopup(this)");
+        let el = tr[i + 1.].children;
+        console.log(el[0].innerHTML)
+        currentFunction(klnClass, i, showEditGradesPopup, el[1]);
+        currentFunction(subjectClass, i, showEditSubjectsPopup, el[0]);
+        currentFunction(glnClass, i, showEditGradesPopup, el[2]);
     }
     standardInformation.style.display = stStyle;
     editModeDiv.style.display = editModeStyle;
@@ -33,12 +37,20 @@ function changeMode (currentFunction, stStyle, editModeStyle, btnTxt, btnTitle, 
     showEditModeTxt.innerHTML = modeTxt;
 }
 
-function changeParticularClassElement_Set (className, i, popup) {
-    className[i].setAttribute("onclick", popup);
+let clickHandler;
+
+function changeParticularClassElement_Set (className, i, popup, x) {
+    clickHandler = () => popup(x);
+    className[i].addEventListener("click", clickHandler);
     className[i].style.cursor = "pointer";
+    return clickHandler;
 }
 
 function changeParticularClassElement_Remove (className, i, popup) {
-    className[i].removeAttribute("onclick");
+    className[i].removeEventListener("click", clickHandler);
     className[i].style.cursor = "unset";
+}
+
+function waitForClickToShowPopup() {
+    
 }

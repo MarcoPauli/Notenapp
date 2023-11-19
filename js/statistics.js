@@ -1,20 +1,27 @@
-
-const xArray = ["1er", "2er", "3er", "4er", "5er", "6er"];
+const xValues = ["1er", "2er", "3er", "4er", "5er", "6er"];
 const yArray = [0, 0, 0, 0, 0, 0];
+const barColors = ["green", "darkgreen","yellow","orange","red","red"];
 
-const data = [{
-  x:xArray,
-  y:yArray,
-  type:"bar",
-  orientation:"v",
-  marker: {color:"rgba(0,0,255,0.6)"}
-}];
-
-const layout = {title:"Einzelne Noten"};
-setInterval(()=> {
+export function statistics() {
   findYArray()
-  Plotly.newPlot("myPlot", data, layout);
-}, 2000);
+  new Chart("myPlot", {
+    type: "bar",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yArray
+      }]
+    },
+    options: {
+      legend: {display: false},
+      title: {
+        display: false,
+        text: "Einzelne Noten"
+      }
+    }
+  });
+}
 
 function findYArray() {
   let grade_1 = 0;
@@ -68,11 +75,35 @@ function findYArray() {
       }
    }
   }
-  yArray[0] = grade_1
-  yArray[1] = grade_2
-  yArray[2] = grade_3
-  yArray[3] = grade_4
-  yArray[4] = grade_5
-  yArray[5] = grade_6
+  yArray[0] = grade_1;
+  yArray[1] = grade_2;
+  yArray[2] = grade_3;
+  yArray[3] = grade_4;
+  yArray[4] = grade_5;
+  yArray[5] = grade_6;
   return yArray;
 }
+
+/*function runTroughSingleArray(subName, x) {
+for (let i = 0; i < subjects[x]["kln"].length; i++)  {
+  switch(subjects[x]["kln"][i]) {
+   case 1: 
+     grade_1 += 1;
+     break;
+   case 2: 
+     grade_2 += 1;
+     break;
+   case 3: 
+     grade_3 += 1;
+     break;
+   case 4: 
+     grade_4 += 1;
+     break;
+   case 5: 
+     grade_5 += 1;
+     break;
+   case 6: 
+     grade_6 += 1;
+  }
+}
+}*/
