@@ -46,7 +46,8 @@ function changeParticularClassElement_Set (className, i, popup, x) {
     return clickHandler;
 }
 
-function changeParticularClassElement_Remove (className, i, popup) {
+function changeParticularClassElement_Remove (className, i, popup, x) {
+    clickHandler = () => popup(x);
     console.log("cool")
     className[i].removeEventListener("click", clickHandler);
     className[i].style.cursor = "unset";
