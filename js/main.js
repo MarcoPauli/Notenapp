@@ -6,7 +6,7 @@ if (storage != null) {
     }
 }
 
-function showSingleHTMLElement(name) {
+export function showSingleHTMLElement(name) {
     let tr = document.createElement("tr");
     let td1 = document.createElement("td");
     let td2 = document.createElement("td");

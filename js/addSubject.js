@@ -1,6 +1,6 @@
 import { showInformation } from "./notification.js";
 import { checkID } from "./checkId.js";
-import { showSingleHTMLElement } from "./loadStandardSet.js";
+import { showSingleHTMLElement } from "./main.js";
 
 addSubjectBtn.addEventListener("click", startToAddSubject);
 
@@ -11,7 +11,7 @@ function startToAddSubject() {
     checkID(userInput);
     if((!isEqual) && (userInput != "") && (!userInput.includes(" "))) {
         addParticularSubject(userInput);
-        showSingleHTMLElement(userInput, true);
+        showSingleHTMLElement(userInput);
         showInformation(`Fach "${userInput}" erfolgreich hinzugefügt`, "green");
     }
     if(isEqual) showInformation("Name bereits vergeben", "red")

@@ -1,58 +1,64 @@
 /*This file manages that the user can switch between normal-mode and edit-mode*/
 import { showEditGradesPopup, showEditSubjectsPopup  } from "./popups.js";
-editGradesBtn.addEventListener("click", editGradesBtnFunc);
 
-function editGradesBtnFunc () {
-    editGradesBtn.removeEventListener("click", changeIntoEditMode);
-    editGradesBtn.addEventListener("click", leaveEditMode);
-    changeIntoEditMode();
+// Function to show a simple popup
+function showPopup() {
+    alert("Popup!");
 }
 
-function changeIntoEditMode() {
-    changeMode(changeParticularClassElement_Set, "none", "block", "🔚", "Bearbeitungsmodus verlassen", "Bearbeitungsmodus")
-}
+// Function to add event listeners to table cells
+function addEventListeners() {
+    const table = document.getElementById("myTable");
+    const cells = document.querySelectorAll("tr");
 
-function leaveEditMode () {
-    editGradesBtn.removeEventListener("click", leaveEditMode);
-    editGradesBtn.addEventListener("click",changeIntoEditMode);
-    changeMode(changeParticularClassElement_Remove, "block", "none", "🖊", "Noten bearbeiten", "Ansichtmodus");
-}
-
-function changeMode (currentFunction, stStyle, editModeStyle, btnTxt, btnTitle, modeTxt) {
-    let klnClass = document.getElementsByClassName("KLNs");
-    let glnClass = document.getElementsByClassName("GLNs");
-    let subjectClass = document.getElementsByClassName("subject");
-    let tr = document.querySelectorAll("tr");
-    for (let i = 0; i < klnClass.length; i++) {
-        let el = tr[i + 1.].children;
-        console.log(el[0].innerHTML)
-        currentFunction(klnClass, i, showEditGradesPopup, el[1]);
-        currentFunction(subjectClass, i, showEditSubjectsPopup, el[0]);
-        currentFunction(glnClass, i, showEditGradesPopup, el[2]);
+    for (let i = 1; i < cells.length; i++) {{
+            cells[i].children[0].addEventListener("click", function() { showEditSubjectsPopup(cells[i].children[0]) });
+            cells[i].children[0].style.cursor = "pointer";
+            cells[i].children[1].addEventListener("click", function() { showEditGradesPopup(cells[i].children[1]) });
+            cells[i].children[1].style.cursor = "pointer";
+            cells[i].children[2].addEventListener("click", function() { showEditGradesPopup(cells[i].children[2]) });
+            cells[i].children[2].style.cursor = "pointer";
+        }
     }
-    standardInformation.style.display = stStyle;
-    editModeDiv.style.display = editModeStyle;
-    editGradesBtn.innerHTML = btnTxt;
-    editGradesBtn.title = btnTitle;
-    showEditModeTxt.innerHTML = modeTxt;
+}
+// Function to remove event listeners from table cells
+function removeEventListeners() {
+    const table = document.getElementById("showGradesTable");
+    const cells = document.querySelectorAll("tr");
+
+    for (let i = 1; i < cells.length; i++) {
+            removeParticularEventListeners(cells[i].children[0])
+            cells[i].children[0].style.cursor = "unset";
+            removeParticularEventListeners(cells[i].children[1])
+            cells[i].children[1].style.cursor = "unset";
+            removeParticularEventListeners(cells[i].children[2])
+            cells[i].children[2].style.cursor = "unset";
+    }
 }
 
-let clickHandler;
-
-function changeParticularClassElement_Set (className, i, popup, x) {
-    clickHandler = () => popup(x);
-    className[i].addEventListener("click", clickHandler);
-    className[i].style.cursor = "pointer";
-    return clickHandler;
+function removeParticularEventListeners(element) {
+    const clone = element.cloneNode(true);
+    element.parentNode.replaceChild(clone, element);
 }
 
-function changeParticularClassElement_Remove (className, i, popup, x) {
-    clickHandler = popup;
-    console.log(popup)
-    className[i].removeEventListener("click", clickHandler);
-    className[i].style.cursor = "unset";
-}
-
-function waitForClickToShowPopup() {
-    
-}
+// Toggle event listeners on button click
+document.getElementById("editGradesBtn").addEventListener("click", function () {
+    const button = document.getElementById("editGradesBtn");
+    if (button.dataset.listeners === "active") {
+        removeEventListeners();
+        button.dataset.listeners = "inactive";
+        standardInformation.style.display = "block";
+        editModeDiv.style.display = "none";
+        editGradesBtn.innerHTML = "🖊";
+        editGradesBtn.title = "Noten bearbeiten";
+        showEditModeTxt.innerHTML = "Ansichtmodus";
+    } else {
+        addEventListeners();
+        button.dataset.listeners = "active";
+        standardInformation.style.display = "none";
+        editModeDiv.style.display = "block";
+        editGradesBtn.innerHTML = "🔚";
+        editGradesBtn.title = "Bearbeitungsmodus verlassen";
+        showEditModeTxt.innerHTML = "Bearbeitungsmodus";
+    }
+});
