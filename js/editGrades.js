@@ -77,10 +77,11 @@ function removeSingleGrade() {
                 clickedCell.innerHTML = "-";
             }
             showInformation("Note erfolgreich gelöscht!", "green");
-            document.getElementById("selectGradePosition").value = "";
+            
         }
         else if(!existsInArray) showInformation("Note nicht definiert", "red");
     }
+    document.getElementById("selectGradePosition").value = "";
 }
 
 function isDefinedAtPosition(arr, position) {
