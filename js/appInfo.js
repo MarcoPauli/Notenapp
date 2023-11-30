@@ -1,5 +1,5 @@
-let saveDataAsFile = document.getElementById("saveDataAsFile");
 saveDataAsFile.addEventListener("click", downloadJSON);
+selectFileBtn.addEventListener("click", readFile);
 
 function downloadJSON() {
     // Convert the JSON data to a string
@@ -27,9 +27,6 @@ function downloadJSON() {
     // Releasing the URL object
     URL.revokeObjectURL(url);
   }
-
-let selectFileBtn = document.getElementById("selectFileBtn");
-selectFileBtn.addEventListener("click", readFile);
 
 function readFile() {
     const input = document.getElementById('selectFile');

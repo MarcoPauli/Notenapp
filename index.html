@@ -204,13 +204,19 @@
           <button id="addGradeDivBtn" class="confirmToAdd">Hinzufügen</button>
         </div>
         <div id="removeGradeDiv" class="InsidePopupsDivs">
-          <h3 id="removeGradePopup">Note entfernen</h3>
+          <h3 id="removeGradePopup">Noten entfernen</h3>
           <p class="explainToUser">Die Noten dieser Zelle löschen?</p>
           <input type="radio" name="delteCells" id="deleteThisCellRadio">
           <label for="deleteThisCellRadio">Ja</label>
           <input type="radio" name="delteCells" id="deleteThisCellRadioNot" checked="">
           <label for="deleteThisCellRadioNot">Nein</label><br><br>
           <button id="confirmToDeleteThisCell" class="deleteBtn">Löschen</button>
+        </div>
+        <div id="removeSingleGradeDiv" class="InsidePopupsDivs">
+          <h3 id="removeSingleGradeHeading">Note entfernen</h3>
+          <p class="explainToUser" id="gradePositionPara">Position der Note:</p>
+          <input id="selectGradePosition" type="number" placeholder="Position"><br><br>
+          <button id="confirmToDeleteThisGrade" class="deleteBtn">Löschen</button>
         </div>
         <button id="finished" class="popupFinished">Fertig</button>
       </div>

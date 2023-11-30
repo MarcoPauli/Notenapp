@@ -1,7 +1,3 @@
-const xValues = ["1er", "2er", "3er", "4er", "5er", "6er"];
-const yArray = [0, 0, 0, 0, 0, 0];
-const barColors = ["green", "darkgreen","yellow","orange","red","red"];
-
 export function statistics() {
   findYArray()
   new Chart("myPlot", {

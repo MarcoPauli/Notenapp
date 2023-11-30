@@ -1,8 +1,9 @@
 import { showInformation } from "./notification.js";
 import { checkID  } from "./checkId.js";
 
-let confirmRenaming = document.getElementById("confirmRenaming");
 confirmRenaming.addEventListener("click", renameSubject);
+confirmToDeleteThisSubject.addEventListener("click", checkToDeleteThisSubject);
+confirmToChangeThisSubjectWeighting.addEventListener("click", checkToStartChangingTheWeighting);
 
 function renameSubject() {
     let userValue = document.getElementById("newSubjectName");
@@ -36,9 +37,6 @@ function renameParticularSubject(name) {
     return clickedCell;
 }
 
-let confirmToDeleteThisSubject = document.getElementById("confirmToDeleteThisSubject");
-confirmToDeleteThisSubject.addEventListener("click", checkToDeleteThisSubject);
-
 function checkToDeleteThisSubject() {
     let askUserToDeleteSubject = confirm("Willst du das Fach wirklich löschen?");
     let clickedCell2 = clickedCell.parentElement.id;
@@ -57,9 +55,6 @@ function deleteSubject(subject) {
     delete subjects[subject];
     localStorage.setItem("subjects", JSON.stringify(subjects));
 }
-
-let confirmToChangeThisSubjectWeighting = document.getElementById("confirmToChangeThisSubjectWeighting");
-confirmToChangeThisSubjectWeighting.addEventListener("click", checkToStartChangingTheWeighting);
 
 function checkToStartChangingTheWeighting() {
     let doubleWeighting = document.getElementById("doubledWeighting");

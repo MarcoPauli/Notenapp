@@ -1,4 +1,3 @@
-let confirmToBackoutApplication = document.getElementById("confirmToBackoutApplication");
 confirmToBackoutApplication.addEventListener("click", checkToBackoutApp);
 
 function checkToBackoutApp() {

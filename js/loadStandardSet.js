@@ -1,6 +1,5 @@
 import { CreateSubject } from "./addSubject.js";
 
-let confirmLoadStandardSetBtn = document.getElementById("confirmLoadStandardSetBtn");
 confirmLoadStandardSetBtn.addEventListener("click", checkToLoadStandardSet);
 
 function checkToLoadStandardSet() {

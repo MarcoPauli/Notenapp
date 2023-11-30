@@ -80,3 +80,7 @@ option {
     font-size: x-large;
 }
 
+#gradePositionPara {
+    display: inline;
+}
+

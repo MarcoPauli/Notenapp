@@ -1,11 +1,6 @@
 /*This file manages that the user can switch between normal-mode and edit-mode*/
 import { showEditGradesPopup, showEditSubjectsPopup  } from "./popups.js";
 
-// Function to show a simple popup
-function showPopup() {
-    alert("Popup!");
-}
-
 // Function to add event listeners to table cells
 function addEventListeners() {
     const table = document.getElementById("myTable");

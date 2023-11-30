@@ -37,7 +37,7 @@ export function calculateSingleAverages() {
     entireAverage = (entireAverage / (averageCounter)).toFixed(2);
     let averageAllSubjects = document.getElementById("averageAllSubjects");
     averageAllSubjects.innerHTML = "&#216;";
-    averageAllSubjects.style.color = "white";
+    averageAllSubjects.style.color = "black";
     document.getElementById("averageAllSubjectsDiv").style.backgroundColor = "grey";
     if (!isNaN(entireAverage)) {
         averageAllSubjects.innerHTML = entireAverage.toString().replace(".", ",");

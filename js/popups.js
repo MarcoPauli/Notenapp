@@ -3,8 +3,7 @@ import { statistics  } from "./statistics.js";
 /*
 THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF STATISTICSPOPUP
 */
-let statisticsPopup = document.getElementById("statisticsPopup");
-let statisticsBtn = document.getElementById("statisticsBtn");
+
 statisticsBtn.addEventListener("click", showStatisticsPopup);
 
 function showStatisticsPopup(THIS) {
@@ -13,7 +12,6 @@ function showStatisticsPopup(THIS) {
     statistics();
 }
 
-let StatisticsPopupFinishedBtn = document.getElementById("StatisticsPopupFinishedBtn");
 StatisticsPopupFinishedBtn.addEventListener("click", () => {
     statisticsPopup.style.display = "none";
     overlayDiv.style.display = "none";
@@ -43,6 +41,10 @@ function saveClickedCell(x) {
 finished.addEventListener("click", () => {
     editGradesPopup.style.display = "none";
     overlayDiv.style.display = "none";
+    document.getElementById("selectGradePlaceholder").selected = true;
+    document.getElementById("deleteThisCellRadio").checked = false;
+    document.getElementById("deleteThisCellRadioNot").checked = true;
+    document.getElementById("selectGradePosition").value = "";
 });
 
 /*
@@ -60,6 +62,9 @@ export function showEditSubjectsPopup(THIS) {
 editSubjectFinished.addEventListener("click", () => {
     editSubjectsPopup.style.display = "none";
     overlayDiv.style.display = "none";
+    document.getElementById("newSubjectName").value = "";
+    document.getElementById("doubledWeighting").checked = false;
+    document.getElementById("singleWeighting").checked = false;
 });
 
 function showWeighting() {

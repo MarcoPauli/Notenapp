@@ -1,12 +1,11 @@
 import { showInformation } from "./notification.js";
 
-let addGradeDivBtn = document.getElementById("addGradeDivBtn");
 addGradeDivBtn.addEventListener("click", () => {
     editGrades();
 });
 
-let confirmToDeleteThisCell = document.getElementById("confirmToDeleteThisCell");
 confirmToDeleteThisCell.addEventListener("click", removeCell);
+confirmToDeleteThisGrade.addEventListener("click", removeSingleGrade);
 
 
 function editGrades() {
@@ -57,4 +56,35 @@ function removeCell() {
     }
     deleteThisCellRadio.checked = false;
     deleteThisCellRadioNot.checked = true;
+}
+
+function removeSingleGrade() {
+    let selectGradePosition = document.getElementById("selectGradePosition").value.trim();
+    selectGradePosition = Number(selectGradePosition);
+    let glnORkln = (clickedCell.id.includes("KLN")) ? "kln" : "gln";
+    
+    if (!isNaN(selectGradePosition) && selectGradePosition >= 1 && !(String(selectGradePosition).includes("."))) {
+        let existsInArray = isDefinedAtPosition(subjects[clickedCell.parentElement.id][glnORkln], selectGradePosition - 1);
+        if(existsInArray) {
+            subjects[clickedCell.parentElement.id][glnORkln].splice(selectGradePosition - 1, 1)
+            localStorage.setItem("subjects", JSON.stringify(subjects));
+            if (subjects[clickedCell.parentElement.id][glnORkln].length > 1) {
+                clickedCell.innerHTML = subjects[clickedCell.parentElement.id][glnORkln][0];
+                for (let i = 1; i < subjects[clickedCell.parentElement.id][glnORkln].length; i++) {
+                    clickedCell.innerHTML += "; " + subjects[clickedCell.parentElement.id][glnORkln][i];
+                }
+            } else if (subjects[clickedCell.parentElement.id][glnORkln].length == 0) {
+                clickedCell.innerHTML = "-";
+            }
+            showInformation("Note erfolgreich gelöscht!", "green");
+            document.getElementById("selectGradePosition").value = "";
+        }
+        else if(!existsInArray) showInformation("Note nicht definiert", "red");
+    }
+}
+
+function isDefinedAtPosition(arr, position) {
+    arr = arr[position];
+    if (arr == undefined) return false;
+    if (arr != undefined) return true;
 }

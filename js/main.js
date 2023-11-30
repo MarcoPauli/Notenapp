@@ -1,5 +1,6 @@
 import { calculateSingleAverages } from "./calculateAverages.js";
 import { userBackgroundColor } from "./theme.js";
+
 if (storage != null) {
     for (let x in subjects) {
         showSingleHTMLElement(subjects[x]["Name"], false);
