@@ -35,10 +35,13 @@ function addParticularSubject(name) {
     subjects[name] = new CreateSubject(name);
     localStorage.setItem("subjects", JSON.stringify(subjects));
 }
+//End of function addParticularSubject
 
+//This defines constructor CreateSubject that it also exported so you can use it in other files
 export function CreateSubject(name, weighting) {
     this.Name = name;
     this.kln = [];
     this.gln = []
     this.weighting = weighting;
 }
+//End of constructor CreateSubject
