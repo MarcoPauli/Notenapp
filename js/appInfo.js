@@ -1,6 +1,14 @@
+
+/*
+THIS FILE CONTAINS THE NECESSARY CODE TO SAVE USERDATA AS JSON-FILE AND TO USE DATA FROM SUCH JSON-FILES 
+*/
+
+// Eventlistener section of the file
 saveDataAsFile.addEventListener("click", downloadJSON);
 selectFileBtn.addEventListener("click", readFile);
+//End of eventlistener section
 
+//This function defines the code to download userdata as json-file
 function downloadJSON() {
     // Convert the JSON data to a string
     const jsonData = JSON.stringify(subjects, null, 2);
@@ -27,7 +35,9 @@ function downloadJSON() {
     // Releasing the URL object
     URL.revokeObjectURL(url);
   }
+//End of function "downloadJSON"
 
+//This function has to read a given file by the user and to use it
 function readFile() {
     const input = document.getElementById('selectFile');
   
@@ -46,3 +56,4 @@ function readFile() {
       reader.readAsText(file);
     }
   }
+//End of function "readFile"
