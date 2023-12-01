@@ -1,7 +1,7 @@
 
 /*
 THIS FILE HAS THE TASK TO ADD FILES INCLUDING THE FUNCTIONS "STARTTOADDSUBJECTS" AND "ADDPARTICULARSUBJECT" AND THE CONSTRUCTOR "CREATESUBJECT" AS WELL WHICH CAN BE USED IN OTHER FILES SINCE IT IS EXPORTED
-/*
+*/
 
 //All necessary functions are imported from other files including functions "showinformation", "checkid" and "showsinglehtmlelement"
 import { showInformation } from "./notification.js";
