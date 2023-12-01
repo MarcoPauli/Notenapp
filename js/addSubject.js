@@ -11,7 +11,9 @@ import { showSingleHTMLElement } from "./main.js";
 
 //This adds an event on starttoaddsubjectbutton so you can add an subject by clicking on this button
 addSubjectBtn.addEventListener("click", startToAddSubject);
+//End of files's eventlistenersection
 
+//The following function defines code that first checks if the userinput is valid and if so then adds an subject with name userinput 
 function startToAddSubject() {
     let userValue = document.getElementById("addSubjectInput");
     let userInput = userValue.value.trim();
@@ -26,7 +28,9 @@ function startToAddSubject() {
     if((userInput == "") || (userInput.includes(" "))) showInformation("invalide Eingabe", "red")
     userValue.value = "";
 }
+//End of function startToAddSubject
 
+//This function creates a new subject by using the CreateSubject constructor and then stores it in localstorage
 function addParticularSubject(name) {
     subjects[name] = new CreateSubject(name);
     localStorage.setItem("subjects", JSON.stringify(subjects));
