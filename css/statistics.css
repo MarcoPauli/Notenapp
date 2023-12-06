@@ -34,3 +34,7 @@
     width:100%;
     max-width:700px;
 }
+
+.fatGrades {
+    font-weight: bold;
+}

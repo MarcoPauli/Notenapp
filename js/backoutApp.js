@@ -1,5 +1,13 @@
-confirmToBackoutApplication.addEventListener("click", checkToBackoutApp);
 
+/*
+THIS FILE CONTAINS THE CODE WHICH IS USED TO BACKOUT THE APPLICATION USING FUNCTIONS "checkToBackoutApp" AND "backoutApplication"
+*/
+
+//If the user clicks on confirmToBackoutApplication the function "checkToBackoutApp" will be executed
+confirmToBackoutApplication.addEventListener("click", checkToBackoutApp);
+//End of files´s eventlistener section
+
+//This function checks to backout the app
 function checkToBackoutApp() {
     let askUserToBackout = confirm("Willst du die App wirklich unwiderruflich zurücksetzen?")
     if (askUserToBackout) {
@@ -9,8 +17,11 @@ function checkToBackoutApp() {
         }
     }
 }
+//End of function "checkToBackoutApp"
 
+//This function is executed if the user confirmed to backout the app
 function backoutApplication() {
     localStorage.clear();
     window.location.href = window.location.href;
 }
+//End of function "backoutApplication"

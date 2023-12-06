@@ -1,5 +1,6 @@
 export function statistics() {
-  findYArray()
+  findYArray();
+  getNumbersOfAllGrades();
   new Chart("myPlot", {
     type: "bar",
     data: {
@@ -48,6 +49,7 @@ function findYArray() {
           grade_6 += 1;
        }
     }
+    returnNumberOfKLN(grade_1 + grade_2 + grade_3 + grade_4 + grade_5 + grade_6);
     for (let i = 0; i < subjects[x]["gln"].length; i++)  {
       switch(subjects[x]["gln"][i]) {
        case 1: 
@@ -69,6 +71,7 @@ function findYArray() {
          grade_6 += 1;
       }
    }
+   returnNumberOfGLN(grade_1 + grade_2 + grade_3 + grade_4 + grade_5 + grade_6);
   }
   yArray[0] = grade_1;
   yArray[1] = grade_2;
@@ -102,3 +105,24 @@ for (let i = 0; i < subjects[x]["kln"].length; i++)  {
   }
 }
 }*/
+
+function getNumbersOfAllGrades() {
+  let numberOfGrades = 0;
+  for (let i = 0; i < yArray.length; i++) {
+    numberOfGrades += yArray[i];
+  }
+  let allGradesFont = document.getElementById("allGradesFont");
+  allGradesFont.innerHTML = numberOfGrades;
+  document.getElementById("klnFont").innerHTML = numberKLNs;
+  document.getElementById("glnFont").innerHTML = numberGLNs;
+}
+
+function returnNumberOfKLN(x) {
+  numberKLNs = x;
+  return numberKLNs;
+}
+
+function returnNumberOfGLN(x) {
+  numberGLNs = x - numberKLNs;
+  return numberGLNs;
+}

@@ -133,11 +133,14 @@
       <!--BEGIN OF "STATISTICS-POPUP"-->
       <div id="statisticsPopup">
         <h3 id="statisticsPopupHeading">Statistiken</h3>
-        <div id="singleGrades">
+        <div id="singleGradesNumbers" class="InsidePopupsDivs">
+          <h3 id="singleGrades">Noten</h3>
+          <p id="allGradesPara">Du hast momentan insgesamt <font class="fatGrades" id="allGradesFont">x</font> Noten, davon <font class="fatGrades" id="klnFont">x</font> kleine Noten und <font class="fatGrades" id="glnFont">x</font> große Noten.</p>
+        </div>
+        <div id="singleGrades" class="InsidePopupsDivs">
           <h3 id="singleGrades">Anzahl einzelne Noten</h3>
           <canvas id="myPlot" style="width:100%;max-width:600px"></canvas>
         </div>
-        
         <button id="StatisticsPopupFinishedBtn">x</button>
       </div>
       <!--END OF STATISTICSPOUP-->

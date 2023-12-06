@@ -48,3 +48,5 @@ let StatisticsPopupFinishedBtn = document.getElementById("StatisticsPopupFinishe
 const xValues = ["1er", "2er", "3er", "4er", "5er", "6er"];
 const yArray = [0, 0, 0, 0, 0, 0];
 const barColors = ["green", "darkgreen","yellow","orange","red","red"];
+let numberKLNs = 0;
+let numberGLNs = 0;
