@@ -7,6 +7,7 @@ THIS FILE HAS THE TASK TO ADD FILES USING THE FUNCTIONS "STARTTOADDSUBJECTS" AND
 import { showInformation } from "./notification.js";
 import { checkID } from "./checkId.js";
 import { showSingleHTMLElement } from "./main.js";
+import { showEditGradesPopup, showEditSubjectsPopup  } from "./popups.js";
 //End of all necessary imports
 
 //This adds an event on starttoaddsubjectbutton so you can add an subject by clicking on this button
@@ -22,6 +23,7 @@ function startToAddSubject() {
     if((!isEqual) && (userInput != "") && (!userInput.includes(" "))) {
         addParticularSubject(userInput);
         showSingleHTMLElement(userInput);
+        addEventListeners();
         showInformation(`Fach "${userInput}" erfolgreich hinzugefügt`, "green");
     }
     if(isEqual) showInformation("Name bereits vergeben", "red")
@@ -32,10 +34,20 @@ function startToAddSubject() {
 
 //This function creates a new subject by using the CreateSubject constructor and then stores it in localstorage
 function addParticularSubject(name) {
-    subjects[name] = new CreateSubject(name);
+    subjects[name] = new CreateSubject(name, 2);
     localStorage.setItem("subjects", JSON.stringify(subjects));
 }
 //End of function addParticularSubject
+
+function addEventListeners() {
+    const cells = document.querySelectorAll("tr");
+    cells[cells.length -1].children[0].addEventListener("click", function() { showEditSubjectsPopup(cells[cells.length -1].children[0]) });
+    cells[cells.length -1].children[0].style.cursor = "pointer";
+    cells[cells.length -1].children[1].addEventListener("click", function() { showEditGradesPopup(cells[cells.length -1].children[1]) });
+    cells[cells.length -1].children[1].style.cursor = "pointer";
+    cells[cells.length -1].children[2].addEventListener("click", function() { showEditGradesPopup(cells[cells.length -1].children[2]) });
+    cells[cells.length -1].children[2].style.cursor = "pointer";
+}
 
 //This defines constructor CreateSubject that it also exported so you can use it in other files
 export function CreateSubject(name, weighting) {

@@ -1,4 +1,6 @@
 export function statistics() {
+  returnNumberOfKLN(0);
+  returnNumberOfGLN(numberKLNs);
   findYArray();
   getNumbersOfAllGrades();
   new Chart("myPlot", {
@@ -49,7 +51,7 @@ function findYArray() {
           grade_6 += 1;
        }
     }
-    returnNumberOfKLN(grade_1 + grade_2 + grade_3 + grade_4 + grade_5 + grade_6);
+    returnNumberOfKLN(grade_1 + grade_2 + grade_3 + grade_4 + grade_5 + grade_6 - numberGLNs);
     for (let i = 0; i < subjects[x]["gln"].length; i++)  {
       switch(subjects[x]["gln"][i]) {
        case 1: 
@@ -82,30 +84,6 @@ function findYArray() {
   return yArray;
 }
 
-/*function runTroughSingleArray(subName, x) {
-for (let i = 0; i < subjects[x]["kln"].length; i++)  {
-  switch(subjects[x]["kln"][i]) {
-   case 1: 
-     grade_1 += 1;
-     break;
-   case 2: 
-     grade_2 += 1;
-     break;
-   case 3: 
-     grade_3 += 1;
-     break;
-   case 4: 
-     grade_4 += 1;
-     break;
-   case 5: 
-     grade_5 += 1;
-     break;
-   case 6: 
-     grade_6 += 1;
-  }
-}
-}*/
-
 function getNumbersOfAllGrades() {
   let numberOfGrades = 0;
   for (let i = 0; i < yArray.length; i++) {
@@ -119,6 +97,7 @@ function getNumbersOfAllGrades() {
 
 function returnNumberOfKLN(x) {
   numberKLNs = x;
+  console.log(numberKLNs)
   return numberKLNs;
 }
 
