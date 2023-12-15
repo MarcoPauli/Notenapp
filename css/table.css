@@ -6,6 +6,8 @@
 
 #showGradesTable {
     border: 2px solid var(--blue);
+    
+    border-collapse: collapse;
     width: 50%;
     position: absolute;
     top: 40%; 
