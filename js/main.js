@@ -48,6 +48,8 @@ export function showSingleHTMLElement(name) {
     table.appendChild(tr);
 }
 
+userBackgroundColor();
+
 let repeatEverySecond = setInterval(() => {
     userBackgroundColor();
     calculateSingleAverages();
