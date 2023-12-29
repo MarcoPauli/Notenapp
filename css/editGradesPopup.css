@@ -36,20 +36,17 @@ option {
 }
 
 .popupFinished {
-    position: absolute;
-    bottom: 10%;
-    width: 20%;
-    left: 40%;
-    right: 40%;
-    padding: 10px;
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    background-color: inherit;
+    border-left: none;
+    border-bottom: none;
+    border-top: 2px solid rgb(51, 0, 153);
+    border-right: 2px solid rgb(51, 0, 153);
+    font-size: xx-large;
+    color: red;
     cursor: pointer;
-    background-color: var(--blue);
-    color: white;
-    border: none;
-}
-
-.popupFinished:hover {
-    background-color: var(--blue);
 }
 
 .deleteBtn {

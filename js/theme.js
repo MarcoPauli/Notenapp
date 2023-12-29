@@ -29,12 +29,12 @@ function changeToXMode(color, backgroundColor, overlayDivBgColor, tbColor, c1, c
     let averageAllSubjectsDiv = document.getElementById("averageAllSubjectsDiv");
     averageAllSubjectsDiv.style.color = "white";
     statistics.style.backgroundColor = tbColor;
-    changeTableTheme(tr, tbColor, color, c1, c2);
+    if (tr.length >= 3) changeTableTheme(tr, color, c1, c2);
 }
 //End of function "changeToXMode"
 
 //Start of function changeTableTheme
-function changeTableTheme(x, tbColor, color, c1, c2) {
+function changeTableTheme(x, color, c1, c2) {
     for (let i = 2; i < x.length;) {
         x[i].style.backgroundColor = c2;
         x[i].style.color = color;
@@ -44,3 +44,15 @@ function changeTableTheme(x, tbColor, color, c1, c2) {
     }
 }
 //End of function changeTableTheme
+
+/*
+for (let i = 2; i < x.length;) {
+        x[i].style.backgroundColor = c2;
+        x[i].style.color = color;
+        x[i - 1].style.backgroundColor = c1;
+        x[i - 1].style.color = color;
+        i = i + 2;
+
+        
+    }
+*/
