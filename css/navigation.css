@@ -1,0 +1,115 @@
+#defaultNavigation {
+    display: block;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 90%;
+    background-color: blue;
+    z-index: 3;
+}
+
+#defaultNavigation_loggedOut {
+    display: block;
+}
+
+#defaultNavigation_loggedIn {
+    display: none;
+}
+
+#defaultLoginBtn {
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 2%;
+    font-size: x-large;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(180, 173, 173, 0.5);
+    color: white
+}
+
+#defaultLoginBtn:hover {
+    color: rgb(241, 118, 118);
+}
+
+#defNav_loggedOut_SettingsBtn {
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 17%;
+    font-size: x-large;
+    border: none;
+    cursor: pointer;
+}
+
+#defaultEditGradesBtn {
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: 2%;
+    font-size: xx-large;
+    border: none;
+    cursor: pointer;
+}
+
+#defaultShowEditModeTxt {
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: 17%;
+    font-size: x-large;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: unset;
+}
+
+#loginDiv {
+    display: none;
+    position: fixed;
+    top: 5%;
+    right: 30%;
+    left: 30%;
+    bottom: 40%;
+    background-color: white;
+    z-index: 4;
+    border: 2px solid blue;
+    text-align: center;
+}
+
+#loginHeading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    color: blue;
+}
+
+.loginInputs {
+    font-size: large;
+}
+
+#startToLoginBtn {
+    border: 2px solid rgb(75, 75, 233);
+    background-color: rgb(75, 75, 233);
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+#startToLoginBtn:hover {
+    transition-duration: 0.5s;
+    background-color: white;
+    color: rgb(75, 75, 233)
+}
+
+#defaultCloseLoginDiv {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background-color: inherit;
+    border: none;
+    font-size: xx-large;
+    color: red;
+    cursor: pointer;
+}

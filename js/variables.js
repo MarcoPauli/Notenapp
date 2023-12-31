@@ -9,8 +9,8 @@ let appSettingsFinishedBtn = document.getElementById("AppSettingsFinishedBtn");
 
 let standardInformation = document.getElementById("standardInformation");
 let editModeDiv = document.getElementById("editModeDiv");
-let showEditModeTxt = document.getElementById("showEditModeTxt");
-let editGradesBtn = document.getElementById("editGradesBtn");
+let defaultShowEditModeTxt = document.getElementById("defaultShowEditModeTxt");
+let defaultEditGradesBtn = document.getElementById("defaultEditGradesBtn");
 
 
 let isEqual = false;

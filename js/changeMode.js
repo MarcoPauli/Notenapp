@@ -37,23 +37,23 @@ function removeParticularEventListeners(element) {
 }
 
 // Toggle event listeners on button click
-document.getElementById("editGradesBtn").addEventListener("click", function () {
-    const button = document.getElementById("editGradesBtn");
+    defaultEditGradesBtn.addEventListener("click", function () {
+    const button = defaultEditGradesBtn;
     if (button.dataset.listeners === "active") {
         removeEventListeners();
         button.dataset.listeners = "inactive";
         standardInformation.style.display = "block";
         editModeDiv.style.display = "none";
-        editGradesBtn.innerHTML = "🖊";
-        editGradesBtn.title = "Noten bearbeiten";
-        showEditModeTxt.innerHTML = "Ansichtmodus";
+        defaultEditGradesBtn.innerHTML = "🖊";
+        defaultEditGradesBtn.title = "Noten bearbeiten";
+        defaultShowEditModeTxt.innerHTML = "Ansichtmodus";
     } else {
         addEventListeners();
         button.dataset.listeners = "active";
         standardInformation.style.display = "none";
         editModeDiv.style.display = "block";
-        editGradesBtn.innerHTML = "🔚";
-        editGradesBtn.title = "Bearbeitungsmodus verlassen";
-        showEditModeTxt.innerHTML = "Bearbeitungsmodus";
+        defaultEditGradesBtn.innerHTML = "🔚";
+        defaultEditGradesBtn.title = "Bearbeitungsmodus verlassen";
+        defaultShowEditModeTxt.innerHTML = "Bearbeitungsmodus";
     }
 });

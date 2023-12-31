@@ -30,12 +30,14 @@
     <script src="js/theme.js" defer type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="js/statistics.js" defer type="module"></script>
+    <script src="js/navigation.js" defer></script>
     <!--CSS-FILES USED IN THIS APP-->
     <link rel="stylesheet" href="css/editSubjects.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/editGradesPopup.css">
     <link rel="stylesheet" href="css/statistics.css">
+    <link rel="stylesheet" type="text/css" href="css/navigation.css">
     <!--MANIFEST-FILE USED IN THIS APP-->
     <link rel="manifest" href="manifest.json">
     <!--ICONS USED IN THIS APP-->
@@ -78,15 +80,37 @@
   <body>
     <!--BEGIN OF NAVIGATIONELEMENTS-->
     <nav>
-      <img id="logo" src="img/favicon.ico" alt="Logo LM">
-    </nav>
+      <div id="defaultNavigation">
+          <div id="defaultNavigation_loggedOut">
+              <button id="defaultLoginBtn" title="Anmelden">Anmelden</button>
+              <button id="defNav_loggedOut_SettingsBtn">⚙️</button>
+          </div>
+          <div id="defaultNavigation_loggedIn">
+              <button id="loginBtn">Einloggen</button>
+              <button id="defNav_loggedOut_SettingsBtn">⚙️</button>
+          </div>
+          <!--THIS DIV SHOWS THE USER THE MODE HE HAS SELECTED-->
+          <button id="defaultShowEditModeTxt">Ansichtmodus</button>
+          <!--THIS BUTTON LETS THE USER SWITCH BETWEEN "ANSICHTMODUS" AND "BEARBEITUNGSGMODUS"-->
+          <button id="defaultEditGradesBtn" title="Noten bearbeiten">🖊</button>
+      </div>
+      <div id="loginDiv">
+          <div id="form_content_inner_container">
+              <h3 id="loginHeading">Login</h3>
+              <input class="loginInputs" type="email" id="email" placeholder="Email"><br><br>
+              <input class="loginInputs" type="password" id="password" placeholder="Passwort"><br><br>
+              <button class="loginInputs" id="startToLoginBtn" onclick="login()">Login</button>
+              <button id="defaultCloseLoginDiv">x</button>
+          </div>
+      </div>
+  </nav>
     <!--END OF NAVIGATIONELEMENTS-->
     <!--BEGIN OF MAIN-->
     <main>
       <!--BEGIN OF THE ELEMENTS THE USER CAN SEE BY DEFAULT-->
       <div id="standardVisible">
-        <!--THIS DIV SHOWS THE USER THE MODE HE HAS SELECTED-->
-        <div id="showEditModeTxt">Ansichtmodus</div>
+        <!--THIS DIV SHOWS THE USER THE MODE HE HAS SELECTED
+        <div id="showEditModeTxt">Ansichtmodus</div>-->
         <!--THIS DIV INCLUDES ALL STANDARDINFORMATION SUCH AS THE MAINHEADING OF THE APPLICATION AS WELL AS THE AVERAGE AND THE STATISTICS-BUTTON-->
         <div id="standardInformation">
           <h1 id="mainHeading">Noten:</h1>
@@ -95,8 +119,8 @@
           </div>
           <button id="statisticsBtn">Statistiken</button>
         </div>
-        <!--THIS BUTTON LETS THE USER SWITCH BETWEEN "ANSICHTMODUS" AND "BEARBEITUNGSGMODUS"-->
-        <button id="editGradesBtn" title="Noten bearbeiten">🖊</button>
+        <!--THIS BUTTON LETS THE USER SWITCH BETWEEN "ANSICHTMODUS" AND "BEARBEITUNGSGMODUS"
+        <button id="editGradesBtn" title="Noten bearbeiten">🖊</button>-->
         <!--THIS TABLE SHOWS THE GRADES AND AVERAGES OF EACH SINGLE SUBJECT-->
         <table id="showGradesTable">
           <tr>
@@ -118,8 +142,8 @@
           <button id="addSubjectBtn">Hinzufügen</button>
           <p id="addSubjectsDivInfo"><br></p>
         </div>
-        <!--THIS BUTTON ALLOWS THE USER TO OPEN THE APP-SETTINGS-POPUP-->
-        <button id="appSettingsBtn">Einstellungen⚙️</button>
+        <!--THIS BUTTON ALLOWS THE USER TO OPEN THE APP-SETTINGS-POPUP
+        <button id="appSettingsBtn">Einstellungen⚙️</button>-->
       </div>
       <!--END OF "EDIT-MODE-DIV"-->
       <!--BEGIN OF "INFORMATIONDIV"-->
@@ -229,4 +253,14 @@
     <!--END OF MAIN-->
   </body>
   <!--END OF BODY-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+  <!-- Our script must be loaded after firebase references -->
+  <script src="js/login.js"></script>
 </html>

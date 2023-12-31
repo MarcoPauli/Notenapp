@@ -43,7 +43,7 @@ main {
 #averageAllSubjectsDiv {
     cursor: pointer;
     position: absolute;
-    top: 10%;
+    top: 15%;
     height: 100px;
     width: 100px;
     left: 45%;
@@ -60,7 +60,6 @@ main {
 #averageAllSubjects {
     position: relative;
     top: 30%;
-    
 }
 
 #statisticsBtn {
@@ -127,7 +126,7 @@ main {
 }
 
 #overlayDiv {
-    background-color: rgba(100, 100, 100, 0.5);
+    background-color: rgba(100, 100, 100, 0.7);
     position: fixed;
     right: 0;
     left: 0;

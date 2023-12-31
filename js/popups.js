@@ -82,8 +82,10 @@ function showSubjectName(n, gkln) {
 /*
 THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF APPSETTINGSPOPUP
 */
+let defNav_loggedOut_SettingsBtn = document.getElementById("defNav_loggedOut_SettingsBtn");
 
-appSettingsBtn.addEventListener("click", () => {
+
+defNav_loggedOut_SettingsBtn.addEventListener("click", () => {
     let appSettingsPopup = document.getElementById("appSettingsPopup");
     appSettingsPopup.style.display = "block";
     let overlayDiv = document.getElementById("overlayDiv");
