@@ -35,12 +35,14 @@ function changeToXMode(color, backgroundColor, overlayDivBgColor, tbColor, c1, c
 
 //Start of function changeTableTheme
 function changeTableTheme(x, color, c1, c2) {
-    for (let i = 2; i < x.length;) {
+    for (let i = 1; i < x.length; i++) {
+        if(!Number.isInteger(i / 2)) {
         x[i].style.backgroundColor = c2;
         x[i].style.color = color;
-        x[i - 1].style.backgroundColor = c1;
-        x[i - 1].style.color = color;
-        i = i + 2;
+        } else if(Number.isInteger(i / 2)) {
+        x[i].style.backgroundColor = c1;
+        x[i].style.color = color;
+        }
     }
 }
 //End of function changeTableTheme
