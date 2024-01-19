@@ -50,3 +50,7 @@ const yArray = [0, 0, 0, 0, 0, 0];
 const barColors = ["green", "darkgreen","yellow","orange","red","red"];
 let numberKLNs = 0;
 let numberGLNs = 0;
+
+let defaultLoginBtn = document.getElementById("defaultLoginBtn");
+let loginDiv = document.getElementById("loginDiv");
+let defaultCloseLoginDiv = document.getElementById("defaultCloseLoginDiv");

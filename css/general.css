@@ -104,18 +104,20 @@ main {
 /*editSubjects.css*/
 
 #informationDiv {
-    text-align: center;
     position: fixed;
-    z-index: 5;
+    width: 40%;
+    text-align: center;
+    margin: auto;
     top: 15%;
-    bottom: 80%;
-    right: 30%;
-    left: 30%;
-    background-color: inherit;
-    color: green;
+    left: 10%;
+    right: 10%;
+    background-color: rgba(0, 0, 0, 0.7);
     font-weight: bold;
+    font-size: larger;
+    padding: 10px;
+    border: 2px solid red;
     display: none;
-    border: none;
+    z-index: 5;
 }
 
 #information {

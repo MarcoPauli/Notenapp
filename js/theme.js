@@ -11,25 +11,17 @@ export function userBackgroundColor() {
 
 //This function changes to xmode
 function changeToXMode(color, backgroundColor, overlayDivBgColor, tbColor, c1, c2) {
-    let overlayDiv = document.getElementById("overlayDiv");
-    let body = document.querySelector("body");
-    let td = document.querySelectorAll("td");
-    let th = document.querySelectorAll("th");
     let tr = document.querySelectorAll("tr");
-    let statistics = document.getElementById("statisticsPopup");
-    let editGradesPopup = document.getElementById("editGradesPopup");
-    let appSettingsPopup = document.getElementById("appSettingsPopup");
-    let editSubjectsPopup = document.getElementById("editSubjectsPopup");
     overlayDiv.style.backgroundColor = overlayDivBgColor;
     editGradesPopup.style.backgroundColor = tbColor;
     appSettingsPopup.style.backgroundColor = tbColor;
     editSubjectsPopup.style.backgroundColor = tbColor;
-    body.style.backgroundColor = backgroundColor;
-    body.style.color = color;
-    let averageAllSubjectsDiv = document.getElementById("averageAllSubjectsDiv");
+    loginDiv.style.backgroundColor = tbColor;
+    document.body.style.backgroundColor = backgroundColor;
+    document.body.style.color = color;
     averageAllSubjectsDiv.style.color = "white";
-    statistics.style.backgroundColor = tbColor;
-    if (tr.length >= 3) changeTableTheme(tr, color, c1, c2);
+    statisticsPopup.style.backgroundColor = tbColor;
+    if (tr.length > 1) changeTableTheme(tr, color, c1, c2);
 }
 //End of function "changeToXMode"
 
@@ -37,24 +29,12 @@ function changeToXMode(color, backgroundColor, overlayDivBgColor, tbColor, c1, c
 function changeTableTheme(x, color, c1, c2) {
     for (let i = 1; i < x.length; i++) {
         if(!Number.isInteger(i / 2)) {
-        x[i].style.backgroundColor = c2;
+        x[i].style.backgroundColor = c1;
         x[i].style.color = color;
         } else if(Number.isInteger(i / 2)) {
-        x[i].style.backgroundColor = c1;
+        x[i].style.backgroundColor = c2;
         x[i].style.color = color;
         }
     }
 }
 //End of function changeTableTheme
-
-/*
-for (let i = 2; i < x.length;) {
-        x[i].style.backgroundColor = c2;
-        x[i].style.color = color;
-        x[i - 1].style.backgroundColor = c1;
-        x[i - 1].style.color = color;
-        i = i + 2;
-
-        
-    }
-*/
