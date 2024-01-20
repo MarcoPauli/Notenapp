@@ -9,7 +9,8 @@ export function statistics() {
       labels: xValues,
       datasets: [{
         backgroundColor: barColors,
-        data: yArray
+        data: yArray,
+        
       }]
     },
     options: {
