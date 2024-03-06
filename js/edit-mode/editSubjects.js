@@ -1,5 +1,5 @@
-import { showInformation } from "./notification.js";
-import { checkID  } from "./checkId.js";
+import { showInformation } from "../general/notification.js";
+import { checkID  } from "../general/checkId.js";
 
 confirmRenaming.addEventListener("click", renameSubject);
 confirmToDeleteThisSubject.addEventListener("click", checkToDeleteThisSubject);

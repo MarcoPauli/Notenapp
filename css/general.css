@@ -111,11 +111,11 @@ main {
     top: 15%;
     left: 10%;
     right: 10%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     font-weight: bold;
     font-size: larger;
     padding: 10px;
-    border: 2px solid red;
+    border: nones;
     display: none;
     z-index: 5;
 }

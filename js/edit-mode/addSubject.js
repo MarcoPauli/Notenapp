@@ -4,10 +4,10 @@ THIS FILE HAS THE TASK TO ADD FILES USING THE FUNCTIONS "STARTTOADDSUBJECTS" AND
 */
 
 //All necessary functions are imported from other files including functions "showinformation", "checkid" and "showsinglehtmlelement"
-import { showInformation } from "./notification.js";
-import { checkID } from "./checkId.js";
-import { showSingleHTMLElement } from "./main.js";
-import { showEditGradesPopup, showEditSubjectsPopup  } from "./popups.js";
+import { showInformation } from "../general/notification.js";
+import { checkID } from "../general/checkId.js";
+import { showSingleHTMLElement } from "../general/main.js";
+import { showEditGradesPopup, showEditSubjectsPopup  } from "../general/popups.js";
 //End of all necessary imports
 
 //This adds an event on starttoaddsubjectbutton so you can add an subject by clicking on this button

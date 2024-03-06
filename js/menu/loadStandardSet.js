@@ -1,4 +1,4 @@
-import { CreateSubject } from "./addSubject.js";
+import { CreateSubject } from "../edit-mode/addSubject.js";
 
 confirmLoadStandardSetBtn.addEventListener("click", checkToLoadStandardSet);
 

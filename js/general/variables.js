@@ -3,6 +3,9 @@ let overlayDiv = document.getElementById("overlayDiv");
 let clickedCell;
 let finished = document.getElementById("finished");
 
+let informationDiv = document.getElementById("informationDiv");
+let information = document.getElementById("information");
+
 let appSettingsBtn = document.getElementById("appSettingsBtn");
 let appSettingsPopup = document.getElementById("appSettingsPopup");
 let appSettingsFinishedBtn = document.getElementById("AppSettingsFinishedBtn");
@@ -20,7 +23,7 @@ let addSubjectBtn = document.getElementById("addSubjectBtn");
 let storage = localStorage.getItem("subjects");
 
 const subjects = (storage == null) ? {} : JSON.parse(storage);
-
+console.log(typeof subjects)
 const standardSubjectsSet = [["Deutsch", 2], ["Englisch", 2], ["Geografie", 1], 
 ["Geschichte", 1], ["Informatik", 1], ["Kunst", 1], ["Latein", 2], ["Mathe", 2], 
 ["Musik", 2], ["Physik", 1], ["PuG", 1], ["Religion", 1], ["Spanisch", 2], 
@@ -54,3 +57,9 @@ let numberGLNs = 0;
 let defaultLoginBtn = document.getElementById("defaultLoginBtn");
 let loginDiv = document.getElementById("loginDiv");
 let defaultCloseLoginDiv = document.getElementById("defaultCloseLoginDiv");
+
+let defaultUserAndAppInfoBtn = document.getElementById("defaultUserAndAppInfoBtn");
+let userAndAppInfoDiv = document.getElementById("userAndAppInfoDiv");
+
+let defaultNavigation_loggedOut = document.getElementById("defaultNavigation_loggedOut");
+let defaultNavigation_loggedIn = document.getElementById("defaultNavigation_loggedIn");

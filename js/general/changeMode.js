@@ -1,5 +1,5 @@
 /*This file manages that the user can switch between normal-mode and edit-mode*/
-import { showEditGradesPopup, showEditSubjectsPopup  } from "./popups.js";
+import { showEditGradesPopup, showEditSubjectsPopup  } from "../general/popups.js";
 
 // Function to add event listeners to table cells
 function addEventListeners() {

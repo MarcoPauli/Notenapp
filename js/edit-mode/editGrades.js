@@ -1,4 +1,4 @@
-import { showInformation } from "./notification.js";
+import { showInformation } from "../general/notification.js";
 
 addGradeDivBtn.addEventListener("click", () => {
     editGrades();

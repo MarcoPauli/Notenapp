@@ -1,4 +1,4 @@
-import { statistics  } from "./statistics.js";
+import { statistics  } from "../view-mode/statistics.js";
 
 /*
 THE FOLLOWING CODE IS RESPOSIBLE FOR THE DISPLAY OF STATISTICSPOPUP

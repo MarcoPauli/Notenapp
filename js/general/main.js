@@ -1,5 +1,5 @@
-import { calculateSingleAverages } from "./calculateAverages.js";
-import { userBackgroundColor } from "./theme.js";
+import { calculateSingleAverages } from "../view-mode/calculateAverages.js";
+import { userBackgroundColor } from "../general/theme.js";
 
 if (storage != null) {
     for (let x in subjects) {
@@ -31,6 +31,7 @@ export function showSingleHTMLElement(name) {
     td3.id = "GLN" + name;
     td3.innerHTML = "-";
     td3.setAttribute("class", "GLNs");
+    console.log(subjects[name]["gln"])
     if (subjects[name]["gln"].length > 1) {
         td3.innerHTML = subjects[name]["gln"][0];
         for (let i = 1; i < subjects[name]["gln"].length; i++) {

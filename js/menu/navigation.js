@@ -11,8 +11,6 @@ defaultCloseLoginDiv.addEventListener("click", function () {
 
 //default; user IS logged in
 
-let defaultUserAndAppInfoBtn = document.getElementById("defaultUserAndAppInfoBtn");
-let userAndAppInfoDiv = document.getElementById("userAndAppInfoDiv");
 defaultUserAndAppInfoBtn.addEventListener("click", showUserAndAppInfo);
 
 function showUserAndAppInfo() {

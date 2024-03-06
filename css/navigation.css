@@ -11,11 +11,11 @@
 }
 
 #defaultNavigation_loggedOut {
-    display: none;
+    display: block;
 }
 
 #defaultNavigation_loggedIn {
-    display: block;
+    display: none;
 }
 
 #defaultLoginBtn {
