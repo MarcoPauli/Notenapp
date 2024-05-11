@@ -20,14 +20,15 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
   <!-- Our script must be loaded after firebase references -->
-  <!--<script src="js/login.js" defer></script>-->
-    <script defer src="js/general/variables.js"></script>
+  <script defer src="js/general/variables.js"></script>
+  
+  <script src="js/login/login.js" defer type="module"></script>
+  <script src="js/general/main.js" defer type="module"></script>
     <script src="js/general/changeMode.js" defer type="module"></script>
     <!--<script type="module">
       import { showEditGradesPopup, showEditSubjectsPopup} from "./popups.js";
     </script>-->
     <script src="js/general/popups.js" defer type="module"></script>
-    <script src="js/general/main.js" defer type="module"></script>
     <script src="js/edit-mode/addSubject.js" defer  type="module"></script>
     <script src="js/edit-mode/editGrades.js" defer type="module"></script>
     <script src="js/general/notification.js" defer type="module"></script>
@@ -35,12 +36,13 @@
     <script src="js/edit-mode/editSubjects.js" defer type="module"></script>
     <script src="js/menu/loadStandardSet.js" defer type="module"></script>
     <script src="js/view-mode/calculateAverages.js" defer type="module"></script>
-    <script src="js/menu/backoutApp.js" defer></script>
-    <script src="js/menu/appInfo.js" defer></script>
+    <script src="js/menu/backoutApp.js" defer type="module"></script>
+    <script src="js/menu/appInfo.js" defer type="module"></script>
     <script src="js/general/theme.js" defer type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="js/view-mode/statistics.js" defer type="module"></script>
     <script src="js/menu/navigation.js" defer></script>
+    <script src="js/edit-mode/storeData.js" defer type="module"></script>
     <!--CSS-FILES USED IN THIS APP-->
     <link rel="stylesheet" href="css/editSubjects.css">
     <link rel="stylesheet" href="css/general.css">
@@ -113,7 +115,7 @@
               <h3 id="loginHeading">Login</h3>
               <input class="loginInputs" type="email" id="email" placeholder="Email"><br><br>
               <input class="loginInputs" type="password" id="password" placeholder="Passwort"><br><br>
-              <button class="loginInputs" id="startToLoginBtn" onclick="login()">Login</button>
+              <button class="loginInputs" id="startToLoginBtn">Login</button>
               <button id="defaultCloseLoginDiv">x</button>
           </div>
       </div>

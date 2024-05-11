@@ -11,6 +11,10 @@ defaultCloseLoginDiv.addEventListener("click", function () {
 
 //default; user IS logged in
 
+defaultAppInfoBtn.addEventListener("click", () =>{
+    overlayDiv.style.display = "block";
+    appSettingsPopup.style.display = "block";
+})
 defaultUserAndAppInfoBtn.addEventListener("click", showUserAndAppInfo);
 
 function showUserAndAppInfo() {

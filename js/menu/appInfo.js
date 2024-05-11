@@ -3,6 +3,9 @@
 THIS FILE CONTAINS THE NECESSARY CODE TO SAVE USERDATA AS JSON-FILE AND TO USE DATA FROM SUCH JSON-FILES 
 */
 
+import { storeData } from "../edit-mode/storeData.js";
+import { userBackgroundColor } from "../general/theme.js";
+
 // Eventlistener section of the file
 saveDataAsFile.addEventListener("click", downloadJSON);
 selectFileBtn.addEventListener("click", readFile);
@@ -11,7 +14,13 @@ selectFileBtn.addEventListener("click", readFile);
 //This function defines the code to download userdata as json-file
 function downloadJSON() {
     // Convert the JSON data to a string
-    const jsonData = JSON.stringify(subjects, null, 2);
+    let res;
+    if (!userIsLoggedIn) {
+      res = JSON.stringify(subjects, null, 2);
+    } else if (userIsLoggedIn && navigator.onLine) {
+      res = JSON.stringify(subjects, null, 2);
+    }
+    const jsonData = res;
   
     // Creating a Blob object
     const blob = new Blob([jsonData], { type: 'application/json' });
@@ -48,7 +57,12 @@ function readFile() {
   
       reader.onload = function(e) {
         // Display the file content
-        localStorage.setItem("subjects", e.target.result);
+        if (!userIsLoggedIn) {
+          localStorage.setItem("subjects", e.target.result);
+        } else if (userIsLoggedIn && navigator.onLine) {
+          subjects = JSON.parse(e.target.result);
+          storeData();
+        }
         window.location.href = window.location.href;
       };
   

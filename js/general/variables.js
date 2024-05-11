@@ -22,8 +22,7 @@ let addSubjectBtn = document.getElementById("addSubjectBtn");
 
 let storage = localStorage.getItem("subjects");
 
-const subjects = (storage == null) ? {} : JSON.parse(storage);
-console.log(typeof subjects)
+var subjects = (storage == null) ? {} : JSON.parse(storage);
 const standardSubjectsSet = [["Deutsch", 2], ["Englisch", 2], ["Geografie", 1], 
 ["Geschichte", 1], ["Informatik", 1], ["Kunst", 1], ["Latein", 2], ["Mathe", 2], 
 ["Musik", 2], ["Physik", 1], ["PuG", 1], ["Religion", 1], ["Spanisch", 2], 
@@ -37,6 +36,7 @@ let confirmToBackoutApplication = document.getElementById("confirmToBackoutAppli
 let addGradeDivBtn = document.getElementById("addGradeDivBtn");
 let confirmToDeleteThisCell = document.getElementById("confirmToDeleteThisCell");
 let confirmToDeleteThisGrade = document.getElementById("confirmToDeleteThisGrade");
+let selectGradePlaceholder = document.getElementById("selectGradePlaceholder");
 
 let confirmRenaming = document.getElementById("confirmRenaming");
 let confirmToDeleteThisSubject = document.getElementById("confirmToDeleteThisSubject");
@@ -63,3 +63,8 @@ let userAndAppInfoDiv = document.getElementById("userAndAppInfoDiv");
 
 let defaultNavigation_loggedOut = document.getElementById("defaultNavigation_loggedOut");
 let defaultNavigation_loggedIn = document.getElementById("defaultNavigation_loggedIn");
+let startToLoginBtn = document.getElementById("startToLoginBtn");
+let defaultAppInfoBtn = document.getElementById("defaultAppInfoBtn");
+
+let dataRef;
+let userIsLoggedIn = false;

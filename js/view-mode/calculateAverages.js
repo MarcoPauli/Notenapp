@@ -66,12 +66,14 @@ function calculateSingleAverage(glnOrKln, i) {
     let tr = document.querySelectorAll("tr");
     let average = 0;
     let x = subjects[tr[i].id][glnOrKln];
-    if (x.length == 1) average = x[0];
+    if ((x.length === 1) && (x[0] != "-")) average = x[0];
     else if (x.length > 1) {
         for (let i2 = 0; i2 < x.length; i2++) {
             average += Number(x[i2]);
         }
         average /= x.length;
+    } else if (x[0] === "-") {
+        average = 0;
     }
     return average;
 }

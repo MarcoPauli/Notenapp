@@ -1,3 +1,5 @@
+import { showSingleHTMLElement } from "../general/main.js";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDwGcAwsDR0kaVc_jCHg48zFEFKVR1DU6A",
@@ -8,11 +10,13 @@ const firebaseConfig = {
     messagingSenderId: "385790756182",
     appId: "1:385790756182:web:f915c485f3b06075a442f7"
   };
+
+  startToLoginBtn.addEventListener("click", login);
   
   firebase.initializeApp(firebaseConfig);
   
   // Session-Persistenz einstellen
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
   
   // Authentifizierungsstatus überprüfen
   firebase.auth().onAuthStateChanged(function(user) {
@@ -23,12 +27,30 @@ const firebaseConfig = {
       defaultNavigation_loggedIn.style.display = "block";
   
       // Retrieve user data from the Realtime Database
-      firebase.database().ref('users/' + user.uid).once('value').then(function(snapshot) {
+      dataRef = firebase.database().ref('users/' + user.uid);
+      dataRef.once('value').then(function(snapshot) {
         var userData = snapshot.val();
-        console.log("User Data:", userData);
+        //console.log("User Data:", userData);
         // Now you can use userData in your application
-        localStorage.setItem("subjects", JSON.stringify(userData.subjects));
-        return subjects;
+        //localStorage.setItem("subjects", JSON.stringify(userData.subjects));
+        if (userData.subjects != undefined) {
+          console.log("nicht undefined")
+          subjects = userData.subjects;
+        } else if (userData.subjects === undefined) {
+          console.log("undefined")
+          subjects = {};
+        }
+        
+        for (let x in userData.subjects) {
+          console.log("hoi")
+          showSingleHTMLElement(userData.subjects[x]["Name"]);
+      }
+      let defaultUserAndAppInfoBtn = document.getElementById("defaultUserAndAppInfoBtn");
+      defaultUserAndAppInfoBtn.innerHTML = userData.userName;
+      //returnSub(subjects);
+      //returnDataRef(userData);
+      return userIsLoggedIn = true;
+        
       }).catch(function(error) {
         console.error("Error fetching user data:", error);
       });
@@ -39,7 +61,12 @@ const firebaseConfig = {
       defaultNavigation_loggedIn.style.display = "none";
     }
   });
-  
+    function returnSub(x) {
+      return x;
+    }
+    function returnDataRef(x) {
+      return x;
+    }
   // Funktion zum Anmelden
   function login() {
     let email = document.getElementById('email').value;
@@ -52,6 +79,7 @@ const firebaseConfig = {
         // Anmeldung erfolgreich
         var user = userCredential.user;
         console.log("Anmeldung erfolgreich:", user.email);
+        localStorage.clear();
         window.location = "";
       })
       .catch(function(error) {

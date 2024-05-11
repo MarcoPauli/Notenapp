@@ -86,9 +86,7 @@ let defNav_loggedOut_SettingsBtn = document.getElementById("defNav_loggedOut_Set
 
 
 defNav_loggedOut_SettingsBtn.addEventListener("click", () => {
-    let appSettingsPopup = document.getElementById("appSettingsPopup");
     appSettingsPopup.style.display = "block";
-    let overlayDiv = document.getElementById("overlayDiv");
     overlayDiv.style.display = "block";
 });
 

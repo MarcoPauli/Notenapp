@@ -1,5 +1,6 @@
 import { showInformation } from "../general/notification.js";
 import { checkID  } from "../general/checkId.js";
+import { storeData } from "./storeData.js";
 
 confirmRenaming.addEventListener("click", renameSubject);
 confirmToDeleteThisSubject.addEventListener("click", checkToDeleteThisSubject);
@@ -25,7 +26,7 @@ function renameParticularSubject(name) {
     subjects[name] = subjects[clickedCell];
     subjects[name].Name = name;
     delete subjects[clickedCell];
-    localStorage.setItem("subjects", JSON.stringify(subjects));
+    storeData();
     newClickedCell.innerHTML = name;
     newClickedCell.parentElement.id = name;
     newClickedCell.parentElement.children[1].id = "KLN" + name;
@@ -53,7 +54,7 @@ function checkToDeleteThisSubject() {
 
 function deleteSubject(subject) {
     delete subjects[subject];
-    localStorage.setItem("subjects", JSON.stringify(subjects));
+    storeData();
 }
 
 function checkToStartChangingTheWeighting() {
@@ -62,13 +63,13 @@ function checkToStartChangingTheWeighting() {
     let weightingHTML = document.getElementById("currentWeighting");
     if (doubleWeighting.checked) {
         subjects[clickedCell.parentElement.id]["weighting"] = 2;
-        localStorage.setItem("subjects", JSON.stringify(subjects));
+        storeData();
         showInformation("Neue Gewichtung: doppelt" , "green");
         weightingHTML.innerHTML = "Doppelt";
     }
     if (singleWeighting.checked) {
         subjects[clickedCell.parentElement.id]["weighting"] = 1;
-        localStorage.setItem("subjects", JSON.stringify(subjects));
+        storeData();
         showInformation("Neue Gewichtung: einfach" , "green");
         weightingHTML.innerHTML = "Einfach";
     }

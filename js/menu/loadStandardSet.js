@@ -1,4 +1,5 @@
 import { CreateSubject } from "../edit-mode/addSubject.js";
+import { storeData } from "../edit-mode/storeData.js";
 
 confirmLoadStandardSetBtn.addEventListener("click", checkToLoadStandardSet);
 
@@ -11,7 +12,7 @@ function standardSet () {
     for (let x in standardSubjectsSet) {
         let subName = standardSubjectsSet[x][0];
         subjects[subName] = new CreateSubject(subName, standardSubjectsSet[x][1]);
-        localStorage.setItem("subjects", JSON.stringify(subjects));
-        window.location.href = window.location.href;
     }
+    storeData()
+    window.location.href = window.location.href;
 }

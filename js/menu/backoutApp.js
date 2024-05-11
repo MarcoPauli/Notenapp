@@ -1,4 +1,4 @@
-
+import { storeData } from "../edit-mode/storeData.js";
 /*
 THIS FILE CONTAINS THE CODE WHICH IS USED TO BACKOUT THE APPLICATION USING FUNCTIONS "checkToBackoutApp" AND "backoutApplication"
 */
@@ -21,6 +21,10 @@ function checkToBackoutApp() {
 
 //This function is executed if the user confirmed to backout the app
 function backoutApplication() {
+    for (let i in subjects) {
+        delete subjects[i];
+    }
+    storeData();
     localStorage.clear();
     window.location.href = window.location.href;
 }
