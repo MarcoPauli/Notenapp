@@ -1,4 +1,5 @@
 import { showSingleHTMLElement } from "../general/main.js";
+import { showInformation } from "../general/notification.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,7 +17,7 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   
   // Session-Persistenz einstellen
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+  //firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
   
   // Authentifizierungsstatus überprüfen
   firebase.auth().onAuthStateChanged(function(user) {
@@ -47,12 +48,11 @@ const firebaseConfig = {
       }
       let defaultUserAndAppInfoBtn = document.getElementById("defaultUserAndAppInfoBtn");
       defaultUserAndAppInfoBtn.innerHTML = userData.userName;
-      //returnSub(subjects);
-      //returnDataRef(userData);
       return userIsLoggedIn = true;
         
       }).catch(function(error) {
         console.error("Error fetching user data:", error);
+        showInformation(error);
       });
     } else {
       // Benutzer ist abgemeldet
@@ -61,12 +61,7 @@ const firebaseConfig = {
       defaultNavigation_loggedIn.style.display = "none";
     }
   });
-    function returnSub(x) {
-      return x;
-    }
-    function returnDataRef(x) {
-      return x;
-    }
+    
   // Funktion zum Anmelden
   function login() {
     let email = document.getElementById('email').value;
@@ -79,6 +74,11 @@ const firebaseConfig = {
         // Anmeldung erfolgreich
         var user = userCredential.user;
         console.log("Anmeldung erfolgreich:", user.email);
+        if (stayLoggedIn.checked) {
+          firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+        } else {
+          firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+        }
         localStorage.clear();
         window.location = "";
       })
@@ -87,6 +87,7 @@ const firebaseConfig = {
         var fehlercode = error.code;
         var fehlermeldung = error.message;
         console.error("Anmeldefehler:", fehlermeldung);
+        showInformation(fehlermeldung, "red")
       });
   }
   

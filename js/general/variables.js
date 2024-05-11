@@ -68,3 +68,4 @@ let defaultAppInfoBtn = document.getElementById("defaultAppInfoBtn");
 
 let dataRef;
 let userIsLoggedIn = false;
+let stayLoggedIn = document.getElementById("stayLoggedIn");
