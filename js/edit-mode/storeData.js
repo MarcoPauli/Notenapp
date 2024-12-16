@@ -1,9 +1,9 @@
 export function storeData() {
     if (!userIsLoggedIn) {
-        alert("!userisloggedin")
+        console.log("!userisloggedin")
         localStorage.setItem("subjects", JSON.stringify(subjects));
     } else if (navigator.onLine && userIsLoggedIn) {
-        alert("user is online and logged in")
+        console.log("user is online and logged in")
         let updates = {
             subjects: subjects
         }
@@ -12,6 +12,6 @@ export function storeData() {
 
         
     } else if (!navigator.onLine) {
-        alert("Keine internetverbindung...")
+        console.log("Keine internetverbindung...")
     }
 }
